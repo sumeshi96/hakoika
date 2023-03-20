@@ -5,8 +5,8 @@ import fs from "fs";
 const config = {
     channelAccessToken:
         process.env.LINE_ACCESS_TOKEN ||
-        "OOSkLWjq5NISpH6wjCflkT/9pAyqR0qAZBrzVASDdLO+zeDKQk53AqJ68J7TKQViqw3M2xefrwdh1qd59KRKIHxnu510NTUvXehTucUzxL8EzLF+UBjjosFw0xppUzSyVW6Umucm0yfIaSh3mXGz0wdB04t89/1O/w1cDnyilFU=",
-    channelSecret: process.env.LINE_SECRET || "9fa57070f4316c817c718b1a0a4d1d86",
+        "QWxDTHCEIPeZYRGsCH/F7qWQdOGeQRO7G/3RMNOnNCQ8AbNuVHg/rBn+HzrH46q2nGcrkSjdhQOzdY4TTCI1Mv6d3RNAuZ/iCSjbYaqjSlIMrHAkfCpHVO+8xuuhU4TNIllBNyPWse9WuN59xUrp9gdB04t89/1O/w1cDnyilFU=",
+    channelSecret: process.env.LINE_SECRET || "b8664e402e76291440564818f7ccea48",
 };
 
 const port = process.env.PORT || 3000;
@@ -66,54 +66,139 @@ const followEvent = async (event: any) => {
 };
 
 const postbackEvent = async (event: any) => {
-    switch (event.postback.data) {
-        // カテゴリごと、場所ごとのFlex Messageを表示させる
-        case "food_goryokaku":
-            //ここでFlex Messageを返す
-            let json1 = JSON.parse(fs.readFileSync("./Calu/food_goryokaku.json", "utf-8"));
-            return client.replyMessage(event.postback.replyToken,json1);
-        case "food_hakodateyama":
-            let json2 = JSON.parse(fs.readFileSync("./Calu/food_hakodateyama.json", "utf-8"));
-            return client.replyMessage(event.postback.replyToken,json2);
-        case "food_bayarea":
-            let json3 = JSON.parse(fs.readFileSync("./Calu/food_bayarea.json", "utf-8"));
-            return client.replyMessage(event.postback.replyToken,json3);
-        case "food_yunokawa":
-            let json4 = JSON.parse(fs.readFileSync("./Calu/food_yunokawa.json", "utf-8"));
-            return client.replyMessage(event.postback.replyToken,json4);
-        case "spot_goryokaku":
-            let json5 = JSON.parse(fs.readFileSync("./Calu/spot_goryokaku.json", "utf-8"));
-            return client.replyMessage(event.postback.replyToken,json5);
-        case "spot_hakodateyama":
-            let json6 = JSON.parse(fs.readFileSync("./Calu/spot_hakodateyama.json", "utf-8"));
-            return client.replyMessage(event.postback.replyToken,json6);
-        case "spot_bayarea":
-            let json7 = JSON.parse(fs.readFileSync("./Calu/spot_bayarea.json", "utf-8"));
-            return client.replyMessage(event.postback.replyToken,json7);
-        case "spot_yunokawa":
-            let json8 = JSON.parse(fs.readFileSync("./Calu/spot_yunokawa.json", "utf-8"));
-            return client.replyMessage(event.postback.replyToken,json8);
-        case "omiyage_goryokaku":
-            let json9 = JSON.parse(fs.readFileSync("./Calu/omiyage_goryokaku.json", "utf-8"));
-            return client.replyMessage(event.postback.replyToken,json9);
-        case "omiyage_hakodateyama":
-            let json10 = JSON.parse(fs.readFileSync("./Calu/omiyage_hakodateyama.json", "utf-8"));
-            return client.replyMessage(event.postback.replyToken,json10);
-        case "omiyage_bayarea":
-            let json11 = JSON.parse(fs.readFileSync("./Calu/omiyage_bayarea.json", "utf-8"));
-            return client.replyMessage(event.postback.replyToken,json11);
-        case "omiyage_yunokawa":
-            let json12 = JSON.parse(fs.readFileSync("./Calu/omiyage_yunokawa.json", "utf-8"));
-            return client.replyMessage(event.postback.replyToken,json12);
+    try {
+        switch (event.postback.data) {
+            // カテゴリごと、場所ごとのFlex Messageを表示させる
+            case "food_goryokaku":
+                //ここでFlex Messageを返す
+                let json1 = JSON.parse(fs.readFileSync("./src/Cell/food_goryokaku.json", "utf-8"));
+                return client.replyMessage(event.postback.replyToken, json1);
+            case "food_hakodateyama":
+                let json2 = JSON.parse(fs.readFileSync("./src/Cell/food_hakodateyama.json", "utf-8"));
+                return client.replyMessage(event.postback.replyToken, json2);
+            case "food_bayarea":
+                let json3 = JSON.parse(fs.readFileSync("./src/Cell/food_bayarea.json", "utf-8"));
+                return client.replyMessage(event.postback.replyToken, json3);
+            // yeah
+            case "food_yunokawa":
+                let json4 = JSON.parse(fs.readFileSync("./src/Cell/food_yunokawa.json", "utf-8"));
+                return client.replyMessage(event.replyToken, {
+                    "type": "flex",
+                    "altText": "food_yunokawa",
+                    "contents":{
+                        "type": "carousel",
+                        "contents": [
+                            {
+                                "type": "bubble",
+                                "hero": {
+                                    "type": "image",
+                                    "size": "full",
+                                    "aspectRatio": "20:13",
+                                    "aspectMode": "cover",
+                                    "url": "https://www.hasesuto.co.jp/images/stores/yunokawa-pc.jpg"
+                                },
+                                "body": {
+                                    "type": "box",
+                                    "layout": "vertical",
+                                    "spacing": "sm",
+                                    "contents": [
+                                        {
+                                            "type": "text",
+                                            "text": "ハセガワストア湯の川店",
+                                            "wrap": true,
+                                            "weight": "bold",
+                                            "size": "xl"
+                                        },
+                                        {
+                                            "type": "box",
+                                            "layout": "vertical",
+                                            "contents": [
+                                                {
+                                                    "type": "text",
+                                                    "text": "0:00-24:00",
+                                                    "wrap": true,
+                                                    "weight": "bold",
+                                                    "size": "lg",
+                                                    "flex": 0
+                                                },
+                                                {
+                                                    "type": "text",
+                                                    "gravity": "bottom",
+                                                    "text": "地元のスーパーマーケット。地元の食材やお土産が豊富。",
+                                                    "decoration": "none",
+                                                    "wrap": true
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                "footer": {
+                                    "type": "box",
+                                    "layout": "vertical",
+                                    "spacing": "sm",
+                                    "contents": [
+                                        {
+                                            "type": "button",
+                                            "style": "primary",
+                                            "action": {
+                                                "type": "uri",
+                                                "label": "Check om Map",
+                                                "uri": "https://goo.gl/maps/8c2ux6PsMWMM19Jv5"
+                                            },
+                                            "color": "#80abcf",
+                                            "gravity": "top"
+                                        },
+                                        {
+                                            "type": "button",
+                                            "action": {
+                                                "type": "postback",
+                                                "data": "hello",
+                                                "label": "Add to To do list"
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                }).catch((err) => { console.log(err.originalError.response.data.details); });
+            case "spot_goryokaku":
+                let json5 = JSON.parse(fs.readFileSync("./src/Cell/spot_goryokaku.json", "utf-8"));
+                return client.replyMessage(event.postback.replyToken, json5);
+            case "spot_hakodateyama":
+                let json6 = JSON.parse(fs.readFileSync("./src/Cell/spot_hakodateyama.json", "utf-8"));
+                return client.replyMessage(event.postback.replyToken, json6);
+            case "spot_bayarea":
+                let json7 = JSON.parse(fs.readFileSync("./src/Cell/spot_bayarea.json", "utf-8"));
+                return client.replyMessage(event.postback.replyToken, json7);
+            case "spot_yunokawa":
+                let json8 = JSON.parse(fs.readFileSync("./src/Cell/spot_yunokawa.json", "utf-8"));
+                return client.replyMessage(event.postback.replyToken, json8);
+            case "omiyage_goryokaku":
+                let json9 = JSON.parse(fs.readFileSync("./src/Cell/omiyage_goryokaku.json", "utf-8"));
+                return client.replyMessage(event.postback.replyToken, json9);
+            case "omiyage_hakodateyama":
+                let json10 = JSON.parse(fs.readFileSync("./src/Cell/omiyage_hakodateyama.json", "utf-8"));
+                return client.replyMessage(event.postback.replyToken, json10);
+            // yeah
+            case "omiyage_bayarea":
+                let json11 = JSON.parse(fs.readFileSync("./src/Cell/omiyage_bayarea.json", "utf-8"));
+                return client.replyMessage(event.postback.replyToken, json11);
+            case "omiyage_yunokawa":
+                let json12 = JSON.parse(fs.readFileSync("./src/Cell/omiyage_yunokawa.json", "utf-8"));
+                return client.replyMessage(event.postback.replyToken, json12);
         
-        //行き先リストに追加
-        case /addList./:
-            const flexId = (event.postback.data).slice(-1);
-            return updateSpotData(1, flexId, event);
+            //行き先リストに追加
+            case /addList./:
+                const flexId = (event.postback.data).slice(-1);
+                return updateSpotData(1, flexId, event);
         
-        // 行き先リストを表示する
-        case "list":
-            return readSpotData(1);
+            // 行き先リストを表示する
+            case "list":
+                return readSpotData(1);
+        }
+    } catch (err:any) {
+        console.log(err.originalError.response.data.details);
     }
 };
 
