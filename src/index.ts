@@ -1,7 +1,6 @@
 import express from "express";
 import * as line from "@line/bot-sdk";
 import fs from "fs";
-import { RichMenu } from "@line/bot-sdk";
 
 const config = {
     channelAccessToken:
@@ -60,7 +59,7 @@ const followEvent = async (event: any) => {
 };
 
 // JSONをローカルから取得して返す
-const getLocalJson = async (path: string): Promise<RichMenu> => {
+const getLocalJson = async (path: string): Promise<line.RichMenu> => {
     return JSON.parse(fs.readFileSync(`${path}`, "utf-8"));
 };
 
@@ -70,7 +69,7 @@ const getLocalImage = (path: string): fs.ReadStream => {
 };
 
 // リッチメニューを呼び出してセットする
-const richMenuEvent = async (richMenu: RichMenu, image: fs.ReadStream) => {
+const richMenuEvent = async (richMenu: line.RichMenu, image: fs.ReadStream) => {
     try {
         const richMenuId = await client.createRichMenu(richMenu);
         await client.setRichMenuImage(richMenuId, image);
