@@ -1,0 +1,281 @@
+﻿[
+    {
+        "id": "1",
+        "facility": "ラッキーピエロ五稜郭公園前店",
+        "img": "luck-pierot-goryokaku.jpg",
+        "openTime": "9:30-22:30",
+        "discription": "五稜郭公園に面したコンビニエンスストア。",
+        "url": "https://goo.gl/maps/AiBnsjGFLJ7rTzV77",
+        "search": "food_goryokaku"
+    },
+    {
+        "id": "2",
+        "facility": "メガドンキホーテ函館",
+        "img": "luck-pierot-goryokaku.jpg",
+        "openTime": "9:00-24:00",
+        "discription": "多くの商品を扱う大型ディスカウントストア。",
+        "url": "https://goo.gl/maps/o8Mm9pTrDpQ9cZJ68",
+        "search": "omiyage_goryokaku"
+    },
+    {
+        "id": "3",
+        "facility": "五稜郭公園",
+        "img": "luck-pierot-goryokaku.jpg",
+        "openTime": "9:00-18:00",
+        "discription": "幕末の要地、五稜郭の跡地を整備した広大な公園。",
+        "url": "https://goo.gl/maps/orVUHcYTvmPSb5Rb6",
+        "search": "spot_goryokaku"
+    },
+    {
+        "id": "4",
+        "facility": "五稜郭タワー",
+        "img": "luck-pierot-goryokaku.jpg",
+        "openTime": "9:00-18:00",
+        "discription": "高さ107mの展望タワー。函館市内を一望できる。",
+        "url": "https://goo.gl/maps/xezxGNZWM1znCWvM7",
+        "search": "spot_goryokaku"
+    },
+    {
+        "id": "5",
+        "facility": "ハセガワストア五稜郭",
+        "img": "luck-pierot-goryokaku.jpg",
+        "openTime": "7:00-24:00",
+        "discription": "地元の食材を扱うスーパーマーケット。",
+        "url": "https://goo.gl/maps/1rrawobKCGWRxg9aA",
+        "search": "food_goryokaku"
+    },
+    {
+        "id": "6",
+        "facility": "旧函館区公会堂",
+        "img": "luck-pierot-goryokaku.jpg",
+        "openTime": "9:00-18:00",
+        "discription": "明治時代に建てられた歴史的建造物。",
+        "url": "https://goo.gl/maps/uHJa5D8fFc8zzAoY9",
+        "search": "spot_hakodateyama"
+    },
+    {
+        "id": "7",
+        "facility": "函館山展望台 山頂ショップ",
+        "img": "luck-pierot-goryokaku.jpg",
+        "openTime": "10:00-21:00",
+        "discription": "函館山山頂にある展望台に併設されたお土産屋さん。",
+        "url": "https://goo.gl/maps/x1sQmVzbePSAAjRK6",
+        "search": "omiyage_hakodateyama"
+    },
+    {
+        "id": "8",
+        "facility": "函館洋菓子 スナッフルス 金森洋物館",
+        "img": "luck-pierot-goryokaku.jpg",
+        "openTime": "10:00-19:00",
+        "discription": "金森洋物館内にある洋菓子店。",
+        "url": "https://goo.gl/maps/Ndpj9QFUb7fmkA4aA",
+        "search": "food_hakodateyama"
+    },
+    {
+        "id": "9",
+        "facility": "八幡坂",
+        "img": "luck-pierot-goryokaku.jpg",
+        "openTime": "0:00-24:00",
+        "discription": "函館の坂道のひとつ。夜景が美しいことで知られる。",
+        "url": "https://goo.gl/maps/kSVzxMBocHGW6S24A",
+        "search": "spot_hakodateyama"
+    },
+    {
+        "id": "10",
+        "facility": "レストラン　ジェノバ",
+        "img": "luck-pierot-goryokaku.jpg",
+        "openTime": "11:00-20:00",
+        "discription": "イタリアンを中心としたレストラン。",
+        "url": "https://goo.gl/maps/PHe9j1a2pCXMbkrU8",
+        "search": "food_hakodateyama"
+    },
+    {
+        "id": "11",
+        "facility": "函館ハリストス正教会",
+        "img": "luck-pierot-goryokaku.jpg",
+        "openTime": "10:00-17:00",
+        "discription": "派手な外観が特徴的なロシア正教の教会。",
+        "url": "https://goo.gl/maps/7sjWEReYRVGvXY8d6",
+        "search": "spot_hakodateyama"
+    },
+    {
+        "id": "12",
+        "facility": "緑の島",
+        "img": "luck-pierot-goryokaku.jpg",
+        "openTime": "9:00-17:00",
+        "discription": "五稜郭公園内にある小さな人工島。遊具がある。",
+        "url": "https://goo.gl/maps/3z5eKTVeKNEveyi66",
+        "search": "spot_hakodateyama"
+    },
+    {
+        "id": "13",
+        "facility": "函館山ロープウェイ",
+        "img": "luck-pierot-goryokaku.jpg",
+        "openTime": "16:00-20:00",
+        "discription": "函館山の山麓から山頂までを結ぶロープウェイ。",
+        "url": "https://goo.gl/maps/a1GvuYEQamPhcFgv5",
+        "search": "spot_hakodateyama"
+    },
+    {
+        "id": "14",
+        "facility": "ラオックス函館赤レンガ店",
+        "img": "luck-pierot-goryokaku.jpg",
+        "openTime": "9:30-19:00",
+        "discription": "函館赤レンガ倉庫群内にあるショッピングセンター。",
+        "url": "https://www.google.com/maps/search/%E3%83%A9%E3%82%AA%E3%83%83%E3%82%AF%E3%82%B9%E5%87%BD%E9%A4%A8%E8%B5%A4%E3%83%AC%E3%83%B3%E3%82%AC%E5%BA%97/@41.7664879,140.7143082,17z/data=!3m1!4b1",
+        "search": "omiyage_bayarea"
+    },
+    {
+        "id": "15",
+        "facility": "北海道四季彩館函館店",
+        "img": "luck-pierot-goryokaku.jpg",
+        "openTime": "7:00-20:00",
+        "discription": "北海道の土産物や特産品が揃う店舗。",
+        "url": "https://goo.gl/maps/Ra7855D12uAYGfWw7",
+        "search": "omiyage_bayarea"
+    },
+    {
+        "id": "16",
+        "facility": "函館朝市駅二市場",
+        "img": "luck-pierot-goryokaku.jpg",
+        "openTime": "5:30-14:00",
+        "discription": "北海道を代表する朝市の一つ。新鮮な海産物が並ぶ。",
+        "url": "https://goo.gl/maps/rtMjXGSRMph4abiv5",
+        "search": "food_bayarea"
+    },
+    {
+        "id": "17",
+        "facility": "はこだてビール",
+        "img": "luck-pierot-goryokaku.jpg",
+        "openTime": "17:00-22:00",
+        "discription": "函館で作られている地ビールの醸造所。",
+        "url": "https://goo.gl/maps/Ph4EQZ1kHUxJ2a2r8",
+        "search": "food_bayarea"
+    },
+    {
+        "id": "18",
+        "facility": "ハセガワストア函館駅前店",
+        "img": "luck-pierot-goryokaku.jpg",
+        "openTime": "8:00-19:00",
+        "discription": "函館駅前にあるスーパーマーケット。",
+        "url": "https://goo.gl/maps/56d1S1nx7mfjr3kTA",
+        "search": "food_bayarea"
+    },
+    {
+        "id": "19",
+        "facility": "ラッキーピエロベイエリア本店",
+        "img": "luck-pierot-goryokaku.jpg",
+        "openTime": "10:00-22:00",
+        "discription": "海の見えるベイエリアにあるピザチェーン店。カジュアルな雰囲気で人気。",
+        "url": "https://goo.gl/maps/7Cid9x4cgNLC2XXw7",
+        "search": "food_bayarea"
+    },
+    {
+        "id": "20",
+        "facility": "ラッキーピエロマリーナ末広店",
+        "img": "luck-pierot-goryokaku.jpg",
+        "openTime": "9:30-23:00",
+        "discription": "マリーナモール内にあるピザチェーン店。オーシャンビューの席あり。",
+        "url": "https://goo.gl/maps/SKCWLmcvS9B2MgSq5",
+        "search": "food_bayarea"
+    },
+    {
+        "id": "21",
+        "facility": "ラッキーピエロ十字街銀座本店",
+        "img": "luck-pierot-goryokaku.jpg",
+        "openTime": "10:00-21:00",
+        "discription": "函館の中心街にあるピザチェーン店。テイクアウトも可能。",
+        "url": "https://goo.gl/maps/4YsENPnggc3YD5j29",
+        "search": "food_bayarea"
+    },
+    {
+        "id": "22",
+        "facility": "函館海鮮料理 海光房",
+        "img": "luck-pierot-goryokaku.jpg",
+        "openTime": "11:00-23:00",
+        "discription": "函館の新鮮な海の幸を味わえる海鮮料理店。オーシャンビューの席あり。",
+        "url": "https://goo.gl/maps/z9pi3LN33hdy9CYr9",
+        "search": "food_bayarea"
+    },
+    {
+        "id": "23",
+        "facility": "函館ひかりの屋台 大門横丁",
+        "img": "luck-pierot-goryokaku.jpg",
+        "openTime": "17:00-24:00",
+        "discription": "函館の夜景を見ながら屋台料理を楽しめる屋台村。地元客にも人気。",
+        "url": "https://goo.gl/maps/YyXKi5Wyr9ejfouV6",
+        "search": "food_bayarea"
+    },
+    {
+        "id": "24",
+        "facility": "五島軒本店 レストラン雪河亭",
+        "img": "luck-pierot-goryokaku.jpg",
+        "openTime": "11:30-20:00",
+        "discription": "函館名物の「ラーメン」を提供する老舗レストラン。カウンター席もある。",
+        "url": "https://goo.gl/maps/S23T5ifLo5kxTnh27",
+        "search": "food_bayarea"
+    },
+    {
+        "id": "25",
+        "facility": "はこだて明治館",
+        "img": "luck-pierot-goryokaku.jpg",
+        "openTime": "9:30-18:00",
+        "discription": "明治時代の洋館を保存・公開する博物館。レトロな雰囲気が魅力。",
+        "url": "https://goo.gl/maps/1BQF4Q535mZLvGNW6",
+        "search": "spot_bayarea"
+    },
+    {
+        "id": "26",
+        "facility": "金森赤レンガ倉庫",
+        "img": "luck-pierot-goryokaku.jpg",
+        "openTime": "9:30-19:00",
+        "discription": "明治時代に建設されたレンガ造りの建物。レストランやショップが入っている。",
+        "url": "https://goo.gl/maps/s7U2BeVJSoKBaepR6",
+        "search": "spot_bayarea"
+    },
+    {
+        "id": "27",
+        "facility": "函館市旧イギリス領事館",
+        "img": "luck-pierot-goryokaku.jpg",
+        "openTime": "9:00-19:00",
+        "discription": "1880年代に建てられた、北海道で最も古い西洋館の一つ。美しい洋風庭園も見どころ。",
+        "url": "https://goo.gl/maps/hMhJFdxJuX18SyBN7",
+        "search": "spot_bayarea"
+    },
+    {
+        "id": "29",
+        "facility": "ハセガワストア湯の川店",
+        "img": "luck-pierot-goryokaku.jpg",
+        "openTime": "0:00-24:00",
+        "discription": "地元のスーパーマーケット。地元の食材やお土産が豊富。",
+        "url": "https://goo.gl/maps/8c2ux6PsMWMM19Jv5",
+        "search": "food_yunokawa"
+    },
+    {
+        "id": "30",
+        "facility": "湯倉神社",
+        "img": "luck-pierot-goryokaku.jpg",
+        "openTime": "0:00-24:00",
+        "discription": "明治時代に建てられた神社。季節の花々が咲き誇る美しい神社として知られる。",
+        "url": "https://goo.gl/maps/z9UHTB8pyAEoqpHU6",
+        "search": "spot_yunokawa"
+    },
+    {
+        "id": "31",
+        "facility": "トラピスチヌ修道院",
+        "img": "luck-pierot-goryokaku.jpg",
+        "openTime": "8:00-17:00",
+        "discription": "ロシア正教会の修道院。レトロな建物や静かな雰囲気が魅力。",
+        "url": "https://goo.gl/maps/gNtNihecEpqqsnmb6",
+        "search": "spot_yunokawa"
+    },
+    {
+        "id": "32",
+        "facility": "函館市熱帯植物園",
+        "img": "luck-pierot-goryokaku.jpg",
+        "openTime": "9:30-18:00",
+        "discription": "北海道内唯一の熱帯植物園。常時20度以上の温度で、南国の植物が楽しめる。",
+        "url": "https://goo.gl/maps/mn6eapHHjsoWCppr9",
+        "search": "spot_yunokawa"
+    }
+]
