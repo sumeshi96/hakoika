@@ -45,13 +45,21 @@ const handleEvent = async (event: any): Promise<any> => {
 // メッセージとリッチメニューを表示
 const followEvent = async (event: any) => {
     try {
-        await client.replyMessage(event.replyToken, {
-            type: "text",
-            text: "Thank you following!!",
-        });
+        await selectLanguageQuickReply(
+            event,
+            "追加してくれてありがとう！\n言語を選択してください\n\nThank you following!\nPlease select a language."
+        );
         await richMenuEvent(
-            await getLocalJson("./exampleData/exRichMenu.json"),
-            getLocalImage("./exampleData/img.png")
+            "rich-menu-1",
+            await getLocalJson("./exampleData/exRichMenu1.json"),
+            getLocalImage("./exampleData/img.png"),
+            true
+        );
+        await richMenuEvent(
+            "rich-menu-2",
+            await getLocalJson("./exampleData/exRichMenu2.json"),
+            getLocalImage("./exampleData/img2.png"),
+            false
         );
     } catch (err) {
         console.log(err);
@@ -69,13 +77,69 @@ const getLocalImage = (path: string): fs.ReadStream => {
 };
 
 // リッチメニューを呼び出してセットする
-const richMenuEvent = async (richMenu: line.RichMenu, image: fs.ReadStream) => {
+const richMenuEvent = async (
+    aliasName: string,
+    richMenu: line.RichMenu,
+    image: fs.ReadStream,
+    isSetDefault: boolean
+) => {
     try {
+        // リッチメニューを作成する
         const richMenuId = await client.createRichMenu(richMenu);
+        console.log(richMenuId);
+        // リッチメニュー画像を追加する
         await client.setRichMenuImage(richMenuId, image);
-        await client.setDefaultRichMenu(richMenuId);
+        // 作成したリッチメニューをデフォルトに設定する
+        if (isSetDefault === true) {
+            await client.setDefaultRichMenu(richMenuId);
+        }
+        // リッチメニューにエイリアスに登録する
+        await client.createRichMenuAlias(richMenuId, aliasName);
+        const richMenuList = await client.getRichMenuAliasList();
+        console.log(richMenuList);
+    } catch (err: any) {
+        //console.log(err);
+        console.log(err.originalError.response.data);
+        //console.log(err.originalError.response.request);
+    }
+};
+
+const selectLanguageQuickReply = async (event: any, sendMessage: string) => {
+    try {
+        await client.replyMessage(event.replyToken, {
+            type: "text",
+            text: sendMessage,
+            quickReply: {
+                items: [
+                    {
+                        type: "action",
+                        action: {
+                            type: "message",
+                            label: "Japanese",
+                            text: "Japanese",
+                        },
+                    },
+                    {
+                        type: "action",
+                        action: {
+                            type: "message",
+                            label: "English",
+                            text: "English",
+                        },
+                    },
+                    {
+                        type: "action",
+                        action: {
+                            type: "message",
+                            label: "Chinese",
+                            text: "Chinese",
+                        },
+                    },
+                ],
+            },
+        });
     } catch (err) {
-        throw err;
+        console.log(err);
     }
 };
 
