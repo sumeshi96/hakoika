@@ -15,8 +15,9 @@
                 "height": 843
             },
             "action": {
-                "type": "uri",
-                "uri": "http://hakodate-jiyuichiba.com/"
+                "type": "richmenuswitch",
+                "richMenuAliasId": "rich-menu-2",
+                "data": "richmenu-change-to-2"
             }
         },
         {
@@ -28,7 +29,7 @@
             },
             "action": {
                 "type": "uri",
-                "uri": "http://youtube.com"
+                "uri": "http://github.com"
             }
         },
         {
@@ -51,9 +52,8 @@
                 "height": 843
             },
             "action": {
-                "type": "richmenuswitch",
-                "richMenuAliasId": "richmenu2",
-                "data": "richmenu-changed-to-2"
+                "type": "uri",
+                "uri": "https://www.hakobura.jp"
             }
         }
     ]

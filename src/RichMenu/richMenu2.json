@@ -4,7 +4,7 @@
         "height": 1686
     },
     "selected": false,
-    "name": "exRichMenu",
+    "name": "rich-menu-2",
     "chatBarText": "Tap to Open",
     "areas": [
         {
@@ -16,7 +16,7 @@
             },
             "action": {
                 "type": "richmenuswitch",
-                "richMenuAliasId": "richmenu3",
+                "richMenuAliasId": "rich-menu-3",
                 "data": "richmenu-changed-to-3"
             }
         },
@@ -29,7 +29,7 @@
             },
             "action": {
                 "type": "richmenuswitch",
-                "richMenuAliasId": "richmenu4",
+                "richMenuAliasId": "rich-menu-4",
                 "data": "richmenu-changed-to-4"
             }
         },
@@ -42,7 +42,7 @@
             },
             "action": {
                 "type": "richmenuswitch",
-                "richMenuAliasId": "richmenu5",
+                "richMenuAliasId": "rich-menu-5",
                 "data": "richmenu-changed-to-5"
             }
         },
@@ -55,7 +55,7 @@
             },
             "action": {
                 "type": "richmenuswitch",
-                "richMenuAliasId": "richmenu1",
+                "richMenuAliasId": "rich-menu-1",
                 "data": "richmenu-changed-to-1"
             }
         }

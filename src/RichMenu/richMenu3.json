@@ -4,7 +4,7 @@
         "height": 1686
     },
     "selected": false,
-    "name": "exRichMenu",
+    "name": "rich-menu-3",
     "chatBarText": "Tap to Open",
     "areas": [
         {
@@ -15,9 +15,8 @@
                 "height": 843
             },
             "action": {
-                "type": "richmenuswitch",
-                "richMenuAliasId": "richmenu3",
-                "data": "richmenu-changed-to-3"
+                "type": "message",
+                "text": "Shopping BayArea"
             }
         },
         {
@@ -28,9 +27,8 @@
                 "height": 843
             },
             "action": {
-                "type": "richmenuswitch",
-                "richMenuAliasId": "richmenu4",
-                "data": "richmenu-changed-to-4"
+                "type": "message",
+                "text": "Shopping Yunokawa"
             }
         },
         {
@@ -41,9 +39,8 @@
                 "height": 843
             },
             "action": {
-                "type": "richmenuswitch",
-                "richMenuAliasId": "richmenu5",
-                "data": "richmenu-changed-to-5"
+                "type": "message",
+                "text": "Shopping Goryokaku"
             }
         },
         {
@@ -54,9 +51,8 @@
                 "height": 843
             },
             "action": {
-                "type": "richmenuswitch",
-                "richMenuAliasId": "richmenu2",
-                "data": "richmenu-changed-to-2"
+                "type": "message",
+                "text": "Shopping Hakodateyama"
             }
         }
     ]

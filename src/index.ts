@@ -5,8 +5,8 @@ import fs from "fs";
 const config = {
     channelAccessToken:
         process.env.LINE_ACCESS_TOKEN ||
-        "OOSkLWjq5NISpH6wjCflkT/9pAyqR0qAZBrzVASDdLO+zeDKQk53AqJ68J7TKQViqw3M2xefrwdh1qd59KRKIHxnu510NTUvXehTucUzxL8EzLF+UBjjosFw0xppUzSyVW6Umucm0yfIaSh3mXGz0wdB04t89/1O/w1cDnyilFU=",
-    channelSecret: process.env.LINE_SECRET || "9fa57070f4316c817c718b1a0a4d1d86",
+        "QWxDTHCEIPeZYRGsCH/F7qWQdOGeQRO7G/3RMNOnNCQ8AbNuVHg/rBn+HzrH46q2nGcrkSjdhQOzdY4TTCI1Mv6d3RNAuZ/iCSjbYaqjSlIMrHAkfCpHVO+8xuuhU4TNIllBNyPWse9WuN59xUrp9gdB04t89/1O/w1cDnyilFU=",
+    channelSecret: process.env.LINE_SECRET || "b8664e402e76291440564818f7ccea48",
 };
 
 const port = process.env.PORT || 3000;
@@ -49,18 +49,15 @@ const followEvent = async (event: any) => {
             event,
             "追加してくれてありがとう！\n言語を選択してください\n\nThank you following!\nPlease select a language."
         );
-        await richMenuEvent(
-            "rich-menu-1",
-            await getLocalJson("./exampleData/exRichMenu1.json"),
-            getLocalImage("./exampleData/img.png"),
-            true
-        );
-        await richMenuEvent(
-            "rich-menu-2",
-            await getLocalJson("./exampleData/exRichMenu2.json"),
-            getLocalImage("./exampleData/img2.png"),
-            false
-        );
+        for (let i = 5; i >= 1; i--) {
+            const filename = `./src/RichMenu/richMenu${i}.json`;
+            console.log(filename);
+            await richMenuEvent(
+                `rich-menu-${i}`,
+                await getLocalJson(filename),
+                getLocalImage(`./src/RichMenu/richmenu${i}.jpeg`)
+            );
+        }
     } catch (err) {
         console.log(err);
     }
@@ -77,12 +74,7 @@ const getLocalImage = (path: string): fs.ReadStream => {
 };
 
 // リッチメニューを呼び出してセットする
-const richMenuEvent = async (
-    aliasName: string,
-    richMenu: line.RichMenu,
-    image: fs.ReadStream,
-    isSetDefault: boolean
-) => {
+const richMenuEvent = async (aliasName: string, richMenu: line.RichMenu, image: fs.ReadStream) => {
     try {
         // リッチメニューを作成する
         const richMenuId = await client.createRichMenu(richMenu);
@@ -90,9 +82,7 @@ const richMenuEvent = async (
         // リッチメニュー画像を追加する
         await client.setRichMenuImage(richMenuId, image);
         // 作成したリッチメニューをデフォルトに設定する
-        if (isSetDefault === true) {
-            await client.setDefaultRichMenu(richMenuId);
-        }
+        await client.setDefaultRichMenu(richMenuId);
         // リッチメニューにエイリアスに登録する
         await client.createRichMenuAlias(richMenuId, aliasName);
         const richMenuList = await client.getRichMenuAliasList();
@@ -142,7 +132,6 @@ const selectLanguageQuickReply = async (event: any, sendMessage: string) => {
         console.log(err);
     }
 };
-
 
 app.listen(port, () => {
     console.log(`Server running on ${port}`);
