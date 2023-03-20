@@ -11,48 +11,61 @@
             "bounds": {
                 "x": 0,
                 "y": 0,
-                "width": 1250,
+                "width": 833,
                 "height": 843
             },
             "action": {
-                "type": "message",
-                "text": "Food BayArea"
+                "type": "richmenuswitch",
+                "richMenuAliasId": "rich-menu-2",
+                "data": "richmenu-changed-to-2"
             }
         },
         {
             "bounds": {
-                "x": 1251,
+                "x": 1666,
                 "y": 0,
-                "width": 1250,
+                "width": 834,
                 "height": 843
             },
             "action": {
                 "type": "message",
-                "text": "Food Yunokawa"
+                "text": "Shop Bay Area"
             }
         },
         {
             "bounds": {
                 "x": 0,
                 "y": 843,
-                "width": 1250,
+                "width": 833,
                 "height": 843
             },
             "action": {
                 "type": "message",
-                "text": "Food Goryokaku"
+                "text": "Shop Goryokaku"
             }
         },
         {
             "bounds": {
-                "x": 1251,
+                "x": 833,
                 "y": 843,
-                "width": 1250,
+                "width": 833,
                 "height": 843
             },
             "action": {
                 "type": "message",
-                "text": "Food Hakodateyama"
+                "text": "Shop Hakodateyama"
+            }
+        },
+        {
+            "bounds": {
+                "x": 1666,
+                "y": 843,
+                "width": 833,
+                "height": 843
+            },
+            "action": {
+                "type": "message",
+                "text": "Shop Yunokawa"
             }
         }
     ]
