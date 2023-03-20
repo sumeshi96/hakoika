@@ -1,0 +1,63 @@
+{
+    "size": {
+        "width": 2500,
+        "height": 1686
+    },
+    "selected": false,
+    "name": "exRichMenu",
+    "chatBarText": "Tap to Open",
+    "areas": [
+        {
+            "bounds": {
+                "x": 0,
+                "y": 0,
+                "width": 1250,
+                "height": 843
+            },
+            "action": {
+                "type": "richmenuswitch",
+                "richMenuAliasId": "richmenu3",
+                "data": "richmenu-changed-to-3"
+            }
+        },
+        {
+            "bounds": {
+                "x": 1251,
+                "y": 0,
+                "width": 1250,
+                "height": 843
+            },
+            "action": {
+                "type": "richmenuswitch",
+                "richMenuAliasId": "richmenu4",
+                "data": "richmenu-changed-to-4"
+            }
+        },
+        {
+            "bounds": {
+                "x": 0,
+                "y": 843,
+                "width": 1250,
+                "height": 843
+            },
+            "action": {
+                "type": "richmenuswitch",
+                "richMenuAliasId": "richmenu5",
+                "data": "richmenu-changed-to-5"
+            }
+        },
+        {
+            "bounds": {
+                "x": 1251,
+                "y": 843,
+                "width": 1250,
+                "height": 843
+            },
+            "action": {
+                "type": "richmenuswitch",
+                "richMenuAliasId": "richmenu2",
+                "data": "richmenu-changed-to-2"
+            }
+        }
+    ]
+}
