@@ -75,7 +75,8 @@ const postbackEvent = async (event: any) => {
                 text:"food_goryokaku"
             });
         case "food_hakodateyama":
-            return;
+            const json:line.Message = fs.readFileSync("./Calu/food_hakodateyama.json","utf-8")
+            return client.replyMessage(event.postback.replyToken,json);
         case "food_bayarea":
             return;
         case "food_yunokawa":
