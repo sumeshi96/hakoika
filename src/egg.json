@@ -1,4 +1,5 @@
-﻿[
+﻿{
+"data":[
     {
         "id": "1",
         "facility": "ラッキーピエロ五稜郭公園前店",
@@ -243,7 +244,7 @@
         "search": "spot_bayarea"
     },
     {
-        "id": "29",
+        "id": "28",
         "facility": "ハセガワストア湯の川店",
         "img": "luck-pierot-goryokaku.jpg",
         "openTime": "0:00-24:00",
@@ -252,7 +253,7 @@
         "search": "food_yunokawa"
     },
     {
-        "id": "30",
+        "id": "29",
         "facility": "湯倉神社",
         "img": "luck-pierot-goryokaku.jpg",
         "openTime": "0:00-24:00",
@@ -261,7 +262,7 @@
         "search": "spot_yunokawa"
     },
     {
-        "id": "31",
+        "id": "30",
         "facility": "トラピスチヌ修道院",
         "img": "luck-pierot-goryokaku.jpg",
         "openTime": "8:00-17:00",
@@ -270,7 +271,7 @@
         "search": "spot_yunokawa"
     },
     {
-        "id": "32",
+        "id": "31",
         "facility": "函館市熱帯植物園",
         "img": "luck-pierot-goryokaku.jpg",
         "openTime": "9:30-18:00",
@@ -279,3 +280,4 @@
         "search": "spot_yunokawa"
     }
 ]
+}
