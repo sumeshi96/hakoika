@@ -28,8 +28,8 @@
                 "height": 843
             },
             "action": {
-                "type": "message",
-                "text": "Shop Bay Area"
+                "type": "postback",
+                "data": "shop_bayarea"
             }
         },
         {
@@ -40,8 +40,8 @@
                 "height": 843
             },
             "action": {
-                "type": "message",
-                "text": "Shop Goryokaku"
+                "type": "postback",
+                "data": "shop_goryokaku"
             }
         },
         {
@@ -52,8 +52,8 @@
                 "height": 843
             },
             "action": {
-                "type": "message",
-                "text": "Shop Hakodateyama"
+                "type": "postback",
+                "data": "shop_hakodateyama"
             }
         },
         {
@@ -64,8 +64,8 @@
                 "height": 843
             },
             "action": {
-                "type": "message",
-                "text": "Shop Yunokawa"
+                "type": "postback",
+                "data": "shop_Yunokawa"
             }
         }
     ]

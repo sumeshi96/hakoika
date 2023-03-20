@@ -28,8 +28,8 @@
                 "height": 843
             },
             "action": {
-                "type": "message",
-                "text": "kankou Bay Area"
+                "type": "postback",
+                "data": "spot_bayarea"
             }
         },
         {
@@ -40,8 +40,8 @@
                 "height": 843
             },
             "action": {
-                "type": "message",
-                "text": "kankou Goryokaku"
+                "type": "postback",
+                "data": "spot_goryokaku"
             }
         },
         {
@@ -52,8 +52,8 @@
                 "height": 843
             },
             "action": {
-                "type": "message",
-                "text": "kankou Hakodateyama"
+                "type": "postback",
+                "data": "spot_hakodateyama"
             }
         },
         {
@@ -64,8 +64,8 @@
                 "height": 843
             },
             "action": {
-                "type": "message",
-                "text": "kankou Yunokawa"
+                "type": "postback",
+                "data": "spot_yunokawa"
             }
         }
     ]

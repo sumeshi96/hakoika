@@ -28,8 +28,8 @@
                 "height": 843
             },
             "action": {
-                "type": "message",
-                "text": "Food Bay Area"
+                "type": "postback",
+                "data": "food_bayarea"
             }
         },
         {
@@ -40,8 +40,8 @@
                 "height": 843
             },
             "action": {
-                "type": "message",
-                "text": "Food Goryokaku"
+               "type": "postback",
+                "data": "food_goryokaku"
             }
         },
         {
@@ -52,8 +52,8 @@
                 "height": 843
             },
             "action": {
-                "type": "message",
-                "text": "Food Hakodateyama"
+               "type": "postback",
+                "data": "food_hakodateyama"
             }
         },
         {
@@ -64,8 +64,8 @@
                 "height": 843
             },
             "action": {
-                "type": "message",
-                "text": "Food Yunokawa"
+               "type": "postback",
+                "data": "food_yunokawa"
             }
         }
     ]

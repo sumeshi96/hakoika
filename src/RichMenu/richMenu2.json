@@ -16,8 +16,8 @@
             },
             "action": {
                 "type": "richmenuswitch",
-                "richMenuAliasId": "rich-menu-3",
-                "data": "richmenu-changed-to-3"
+                "richMenuAliasId": "rich-menu-4",
+                "data": "richmenu-changed-to-4"
             }
         },
         {
@@ -29,8 +29,8 @@
             },
             "action": {
                 "type": "richmenuswitch",
-                "richMenuAliasId": "rich-menu-4",
-                "data": "richmenu-changed-to-4"
+                "richMenuAliasId": "rich-menu-3",
+                "data": "richmenu-changed-to-3"
             }
         },
         {

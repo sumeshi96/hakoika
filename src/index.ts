@@ -1,4 +1,4 @@
-import express from "express";
+import express, { text } from "express";
 import * as line from "@line/bot-sdk";
 import fs from "fs";
 
@@ -36,6 +36,8 @@ const handleEvent = async (event: any): Promise<any> => {
             return;
         case "message":
             return;
+        case "postback":
+            return await postbackEvent(event);
         default:
             return;
     }
@@ -60,6 +62,49 @@ const followEvent = async (event: any) => {
         }
     } catch (err) {
         console.log(err);
+    }
+};
+
+const postbackEvent = async (event: any) => {
+    switch (event.postback.data) {
+        // カテゴリごと、場所ごとのFlex Messageを表示させる
+        case "food_goryokaku":
+            //ここでFlex Messageを返す
+            return client.replyMessage(event.postback.replyToken, {
+                type: "text",
+                text:"food_goryokaku"
+            });
+        case "food_hakodateyama":
+            return;
+        case "food_bayarea":
+            return;
+        case "food_yunokawa":
+            return;   
+        case "spot_goryokaku":
+            return;
+        case "spot_hakodateyama":
+            return;
+        case "spot_bayarea":
+            return;
+        case "spot_yunokawa":
+            return;
+        case "omiyage_goryokaku":
+            return;
+        case "omiyage_hakodateyama":
+            return;
+        case "omiyage_bayarea":
+            return;
+        case "omiyage_yunokawa":
+            return;
+        
+        //行き先リストに追加
+        case /addList./:
+            const flexId = (event.postback.data).slice(-1);
+            return updateSpotData(1, flexId, event);
+        
+        // 行き先リストを表示する
+        case "list":
+            return readSpotData(1);
     }
 };
 
@@ -132,6 +177,50 @@ const selectLanguageQuickReply = async (event: any, sendMessage: string) => {
         console.log(err);
     }
 };
+
+// なんとなく書いておく行き先保存用関数
+const storeSpotData = () => {
+    const spotData= new Array(5);
+    for (let i = 0; i < 5; i++) { 
+        spotData[i] = new Array(40);
+    }
+
+    for (let i = 0; i < 5; i++) {
+        for (let j = 0; j < 40; j++) {
+            spotData[i][j] = 0;
+        }
+    }
+    fs.writeFileSync("./src/storeSpotDate.json", JSON.stringify(spotData));
+}
+
+// リストに追加
+const updateSpotData = (userId:number,flexId:number ,event:any) => {
+    const spotData = JSON.parse(fs.readFileSync("./src/storeSpotDate.json", "utf-8"));
+    // 1の要素が12個以上あるときは追加できなくする
+    let count = 0;
+        for (let j = 0; j < 40; j++) {
+            if (spotData[userId][j] == 1) {
+                count++;
+            }
+            if (count >= 12) {
+                console.log("追加できないよ！")
+                return client.replyMessage(event.replyToken, {
+                    type: "text",
+                    text: "これ以上追加することは出来ません！"
+                });
+                
+                //return;
+            }
+        }
+    spotData[userId][flexId] = 1;
+    fs.writeFileSync("./src/storeSpotDate.json", JSON.stringify(spotData));
+}
+
+// リストのデータを表示
+const readSpotData = (userId:number) => {
+    const spotData = JSON.parse(fs.readFileSync("./src/storeSpotDate.json", "utf-8"));
+    console.log(spotData[userId]);
+}
 
 app.listen(port, () => {
     console.log(`Server running on ${port}`);
