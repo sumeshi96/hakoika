@@ -51,7 +51,7 @@ const followEvent = async (event: any) => {
         });
         await richMenuEvent(
             await getLocalJson("./src/RichMenu/richMenu1.json"),
-            getLocalImage("./src/RichMenu/richmenu1.png")
+            getLocalImage("./src/RichMenu/richmenu1.png"),
         );
     } catch (err) {
         console.log(err);

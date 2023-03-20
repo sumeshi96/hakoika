@@ -11,49 +11,52 @@
             "bounds": {
                 "x": 0,
                 "y": 0,
-                "width": 833,
+                "width": 1250,
                 "height": 843
             },
             "action": {
-                "type": "uri",
-                "uri": "http://hakodate-jiyuichiba.com/"
+                "type": "richmenuswitch",
+                "richMenuAliasId": "richmenu3",
+                "data": "richmenu-changed-to-3"
             }
         },
         {
             "bounds": {
-                "x": 1226,
+                "x": 1251,
                 "y": 0,
-                "width": 1225,
+                "width": 1250,
                 "height": 843
             },
             "action": {
-                "type": "uri",
-                "uri": "http://youtube.com"
+                "type": "richmenuswitch",
+                "richMenuAliasId": "richmenu4",
+                "data": "richmenu-changed-to-4"
             }
         },
         {
             "bounds": {
                 "x": 0,
                 "y": 843,
-                "width": 1225,
-                "height": 843
-            },
-            "action": {
-                "type": "uri",
-                "uri": "http://youtube.com"
-            }
-        },
-        {
-            "bounds": {
-                "x": 1226,
-                "y": 843,
-                "width": 1225,
+                "width": 1250,
                 "height": 843
             },
             "action": {
                 "type": "richmenuswitch",
-                "richMenuAliasId": "richmenu2",
-                "data": "richmenu-changed-to-2"
+                "richMenuAliasId": "richmenu5",
+                "data": "richmenu-changed-to-5"
+            }
+        },
+        {
+            "bounds": {
+                "x": 1251,
+                "y": 843,
+                "width": 1250,
+                "height": 843
+            },
+            "action": {
+                "type": "richmenuswitch",
+                "richMenuAliasId": "richmenu1",
+                "data": "richmenu-changed-to-1"
             }
         }
     ]
