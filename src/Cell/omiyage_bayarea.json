@@ -8,7 +8,7 @@
                 "size": "full",
                 "aspectRatio": "20:13",
                 "aspectMode": "cover",
-                "url": "hasestore-yunokawa.png"
+                "url": "raox-akarenga.png"
             },
             "body": {
                 "type": "box",
@@ -17,7 +17,7 @@
                 "contents": [
                     {
                         "type": "text",
-                        "text": "ハセガワストア湯の川店",
+                        "text": "ラオックス函館赤レンガ店",
                         "wrap": true,
                         "weight": "bold",
                         "size": "xl"
@@ -28,7 +28,7 @@
                         "contents": [
                             {
                                 "type": "text",
-                                "text": "0:00-24:00",
+                                "text": "9:30-19:00",
                                 "wrap": true,
                                 "weight": "bold",
                                 "size": "lg",
@@ -37,7 +37,7 @@
                             {
                                 "type": "text",
                                 "gravity": "bottom",
-                                "text": "地元のスーパーマーケット。地元の食材やお土産が豊富。",
+                                "text": "函館赤レンガ倉庫群内にあるショッピングセンター。",
                                 "decoration": "none",
                                 "wrap": true
                             }
@@ -56,7 +56,7 @@
                         "action": {
                             "type": "uri",
                             "label": "Check om Map",
-                            "uri": "https://goo.gl/maps/8c2ux6PsMWMM19Jv5"
+                            "uri": "https://www.google.com/maps/search/%E3%83%A9%E3%82%AA%E3%83%83%E3%82%AF%E3%82%B9%E5%87%BD%E9%A4%A8%E8%B5%A4%E3%83%AC%E3%83%B3%E3%82%AC%E5%BA%97/@41.7664879,140.7143082,17z/data=!3m1!4b1"
                         },
                         "color": "#80abcf",
                         "gravity": "top"
@@ -65,7 +65,78 @@
                         "type": "button",
                         "action": {
                             "type": "postback",
-                            "data": "hello",
+                            "data": "addList14",
+                            "label": "Add to To do list"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "type": "bubble",
+            "hero": {
+                "type": "image",
+                "size": "full",
+                "aspectRatio": "20:13",
+                "aspectMode": "cover",
+                "url": "siki-hakodate.png"
+            },
+            "body": {
+                "type": "box",
+                "layout": "vertical",
+                "spacing": "sm",
+                "contents": [
+                    {
+                        "type": "text",
+                        "text": "北海道四季彩館函館店",
+                        "wrap": true,
+                        "weight": "bold",
+                        "size": "xl"
+                    },
+                    {
+                        "type": "box",
+                        "layout": "vertical",
+                        "contents": [
+                            {
+                                "type": "text",
+                                "text": "7:00-20:00",
+                                "wrap": true,
+                                "weight": "bold",
+                                "size": "lg",
+                                "flex": 0
+                            },
+                            {
+                                "type": "text",
+                                "gravity": "bottom",
+                                "text": "北海道の土産物や特産品が揃う店舗。",
+                                "decoration": "none",
+                                "wrap": true
+                            }
+                        ]
+                    }
+                ]
+            },
+            "footer": {
+                "type": "box",
+                "layout": "vertical",
+                "spacing": "sm",
+                "contents": [
+                    {
+                        "type": "button",
+                        "style": "primary",
+                        "action": {
+                            "type": "uri",
+                            "label": "Check om Map",
+                            "uri": "https://goo.gl/maps/Ra7855D12uAYGfWw7"
+                        },
+                        "color": "#80abcf",
+                        "gravity": "top"
+                    },
+                    {
+                        "type": "button",
+                        "action": {
+                            "type": "postback",
+                            "data": "addList15",
                             "label": "Add to To do list"
                         }
                     }
