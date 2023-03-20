@@ -4,55 +4,68 @@
         "height": 1686
     },
     "selected": false,
-    "name": "rich-menu-3",
+    "name": "rich-menu-5",
     "chatBarText": "Tap to Open",
     "areas": [
         {
             "bounds": {
                 "x": 0,
                 "y": 0,
-                "width": 1250,
+                "width": 833,
                 "height": 843
             },
             "action": {
-                "type": "message",
-                "text": "Sightseeing Spots BayArea"
+                "type": "richmenuswitch",
+                "richMenuAliasId": "rich-menu-2",
+                "data": "richmenu-changed-to-2"
             }
         },
         {
             "bounds": {
-                "x": 1251,
+                "x": 1666,
                 "y": 0,
-                "width": 1250,
+                "width": 834,
                 "height": 843
             },
             "action": {
                 "type": "message",
-                "text": "Sightseeing Spots Yunokawa"
+                "text": "kankou Bay Area"
             }
         },
         {
             "bounds": {
                 "x": 0,
                 "y": 843,
-                "width": 1250,
+                "width": 833,
                 "height": 843
             },
             "action": {
                 "type": "message",
-                "text": "Sightseeing Spots Goryokaku"
+                "text": "kankou Goryokaku"
             }
         },
         {
             "bounds": {
-                "x": 1251,
+                "x": 833,
                 "y": 843,
-                "width": 1250,
+                "width": 833,
                 "height": 843
             },
             "action": {
                 "type": "message",
-                "text": "Sightseeing Spots Hakodateyama"
+                "text": "kankou Hakodateyama"
+            }
+        },
+        {
+            "bounds": {
+                "x": 1666,
+                "y": 843,
+                "width": 833,
+                "height": 843
+            },
+            "action": {
+                "type": "message",
+                "text": "kankou Yunokawa"
             }
         }
     ]
