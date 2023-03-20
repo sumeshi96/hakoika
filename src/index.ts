@@ -70,33 +70,41 @@ const postbackEvent = async (event: any) => {
         // カテゴリごと、場所ごとのFlex Messageを表示させる
         case "food_goryokaku":
             //ここでFlex Messageを返す
-            return client.replyMessage(event.postback.replyToken, {
-                type: "text",
-                text:"food_goryokaku"
-            });
+            let json1 = JSON.parse(fs.readFileSync("./Calu/food_goryokaku.json", "utf-8"));
+            return client.replyMessage(event.postback.replyToken,json1);
         case "food_hakodateyama":
-            const json:line.Message = fs.readFileSync("./Calu/food_hakodateyama.json","utf-8")
-            return client.replyMessage(event.postback.replyToken,json);
+            let json2 = JSON.parse(fs.readFileSync("./Calu/food_hakodateyama.json", "utf-8"));
+            return client.replyMessage(event.postback.replyToken,json2);
         case "food_bayarea":
-            return;
+            let json3 = JSON.parse(fs.readFileSync("./Calu/food_bayarea.json", "utf-8"));
+            return client.replyMessage(event.postback.replyToken,json3);
         case "food_yunokawa":
-            return;   
+            let json4 = JSON.parse(fs.readFileSync("./Calu/food_yunokawa.json", "utf-8"));
+            return client.replyMessage(event.postback.replyToken,json4);
         case "spot_goryokaku":
-            return;
+            let json5 = JSON.parse(fs.readFileSync("./Calu/spot_goryokaku.json", "utf-8"));
+            return client.replyMessage(event.postback.replyToken,json5);
         case "spot_hakodateyama":
-            return;
+            let json6 = JSON.parse(fs.readFileSync("./Calu/spot_hakodateyama.json", "utf-8"));
+            return client.replyMessage(event.postback.replyToken,json6);
         case "spot_bayarea":
-            return;
+            let json7 = JSON.parse(fs.readFileSync("./Calu/spot_bayarea.json", "utf-8"));
+            return client.replyMessage(event.postback.replyToken,json7);
         case "spot_yunokawa":
-            return;
+            let json8 = JSON.parse(fs.readFileSync("./Calu/spot_yunokawa.json", "utf-8"));
+            return client.replyMessage(event.postback.replyToken,json8);
         case "omiyage_goryokaku":
-            return;
+            let json9 = JSON.parse(fs.readFileSync("./Calu/omiyage_goryokaku.json", "utf-8"));
+            return client.replyMessage(event.postback.replyToken,json9);
         case "omiyage_hakodateyama":
-            return;
+            let json10 = JSON.parse(fs.readFileSync("./Calu/omiyage_hakodateyama.json", "utf-8"));
+            return client.replyMessage(event.postback.replyToken,json10);
         case "omiyage_bayarea":
-            return;
+            let json11 = JSON.parse(fs.readFileSync("./Calu/omiyage_bayarea.json", "utf-8"));
+            return client.replyMessage(event.postback.replyToken,json11);
         case "omiyage_yunokawa":
-            return;
+            let json12 = JSON.parse(fs.readFileSync("./Calu/omiyage_yunokawa.json", "utf-8"));
+            return client.replyMessage(event.postback.replyToken,json12);
         
         //行き先リストに追加
         case /addList./:
