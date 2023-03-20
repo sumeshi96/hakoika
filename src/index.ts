@@ -5,8 +5,8 @@ import fs from "fs";
 const config = {
     channelAccessToken:
         process.env.LINE_ACCESS_TOKEN ||
-        "Cma/vukavLctdYahgGGLVPglo0zlhV3xs0A5wd+du9ra4oSW+/IuFtBGUApxuHbUnGcrkSjdhQOzdY4TTCI1Mv6d3RNAuZ/iCSjbYaqjSlLOah8PaO5Q9u5zc6XGPrkboAFhBXKP/tcwbBDIPKzzRQdB04t89/1O/w1cDnyilFU=",
-    channelSecret: process.env.LINE_SECRET || "b8664e402e76291440564818f7ccea48",
+        "OOSkLWjq5NISpH6wjCflkT/9pAyqR0qAZBrzVASDdLO+zeDKQk53AqJ68J7TKQViqw3M2xefrwdh1qd59KRKIHxnu510NTUvXehTucUzxL8EzLF+UBjjosFw0xppUzSyVW6Umucm0yfIaSh3mXGz0wdB04t89/1O/w1cDnyilFU=",
+    channelSecret: process.env.LINE_SECRET || "9fa57070f4316c817c718b1a0a4d1d86",
 };
 
 const port = process.env.PORT || 3000;
@@ -50,8 +50,8 @@ const followEvent = async (event: any) => {
             text: "Thank you following!!",
         });
         await richMenuEvent(
-            await getLocalJson("./exampleData/exRichMenu.json"),
-            getLocalImage("./exampleData/img.png")
+            await getLocalJson("./src/RichMenu/richMenu1.json"),
+            getLocalImage("./src/RichMenu/richmenu1.png")
         );
     } catch (err) {
         console.log(err);
@@ -78,6 +78,7 @@ const richMenuEvent = async (richMenu: line.RichMenu, image: fs.ReadStream) => {
         throw err;
     }
 };
+
 
 app.listen(port, () => {
     console.log(`Server running on ${port}`);
