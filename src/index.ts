@@ -181,9 +181,164 @@ const postbackEvent = async (event: any) => {
                 let json10 = JSON.parse(fs.readFileSync("./src/Cell/omiyage_hakodateyama.json", "utf-8"));
                 return client.replyMessage(event.postback.replyToken, json10);
             // yeah
-            case "omiyage_bayarea":
-                let json11 = JSON.parse(fs.readFileSync("./src/Cell/omiyage_bayarea.json", "utf-8"));
-                return client.replyMessage(event.postback.replyToken, json11);
+            case "omiyage_bayarea":let json11 = JSON.parse(fs.readFileSync("./src/Cell/food_yunokawa.json", "utf-8"));
+            return client.replyMessage(event.replyToken, {
+                "type": "flex",
+                "altText": "omiyage_bayarea",
+                "contents":{
+                    "type": "carousel",
+                    "contents": [
+                        {
+                            "type": "carousel",
+                            "contents": [
+                                {
+                                    "type": "bubble",
+                                    "hero": {
+                                        "type": "image",
+                                        "size": "full",
+                                        "aspectRatio": "20:13",
+                                        "aspectMode": "cover",
+                                        "url": "https://s3-media0.fl.yelpcdn.com/bphoto/GL1Df67p95LDxFASDXg6BA/o.jpg"
+                                    },
+                                    "body": {
+                                        "type": "box",
+                                        "layout": "vertical",
+                                        "spacing": "sm",
+                                        "contents": [
+                                            {
+                                                "type": "text",
+                                                "text": "ラオックス函館赤レンガ店",
+                                                "wrap": true,
+                                                "weight": "bold",
+                                                "size": "xl"
+                                            },
+                                            {
+                                                "type": "box",
+                                                "layout": "vertical",
+                                                "contents": [
+                                                    {
+                                                        "type": "text",
+                                                        "text": "9:30-19:00",
+                                                        "wrap": true,
+                                                        "weight": "bold",
+                                                        "size": "lg",
+                                                        "flex": 0
+                                                    },
+                                                    {
+                                                        "type": "text",
+                                                        "gravity": "bottom",
+                                                        "text": "函館赤レンガ倉庫群内にあるショッピングセンター。",
+                                                        "decoration": "none",
+                                                        "wrap": true
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    "footer": {
+                                        "type": "box",
+                                        "layout": "vertical",
+                                        "spacing": "sm",
+                                        "contents": [
+                                            {
+                                                "type": "button",
+                                                "style": "primary",
+                                                "action": {
+                                                    "type": "uri",
+                                                    "label": "Check om Map",
+                                                    "uri": "https://www.google.com/maps/search/%E3%83%A9%E3%82%AA%E3%83%83%E3%82%AF%E3%82%B9%E5%87%BD%E9%A4%A8%E8%B5%A4%E3%83%AC%E3%83%B3%E3%82%AC%E5%BA%97/@41.7664879,140.7143082,17z/data=!3m1!4b1"
+                                                },
+                                                "color": "#80abcf",
+                                                "gravity": "top"
+                                            },
+                                            {
+                                                "type": "button",
+                                                "action": {
+                                                    "type": "postback",
+                                                    "data": "addList14",
+                                                    "label": "Add to To do list"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "type": "bubble",
+                                    "hero": {
+                                        "type": "image",
+                                        "size": "full",
+                                        "aspectRatio": "20:13",
+                                        "aspectMode": "cover",
+                                        "url": "https://s3-media0.fl.yelpcdn.com/bphoto/GL1Df67p95LDxFASDXg6BA/o.jpg"
+                                    },
+                                    "body": {
+                                        "type": "box",
+                                        "layout": "vertical",
+                                        "spacing": "sm",
+                                        "contents": [
+                                            {
+                                                "type": "text",
+                                                "text": "北海道四季彩館函館店",
+                                                "wrap": true,
+                                                "weight": "bold",
+                                                "size": "xl"
+                                            },
+                                            {
+                                                "type": "box",
+                                                "layout": "vertical",
+                                                "contents": [
+                                                    {
+                                                        "type": "text",
+                                                        "text": "7:00-20:00",
+                                                        "wrap": true,
+                                                        "weight": "bold",
+                                                        "size": "lg",
+                                                        "flex": 0
+                                                    },
+                                                    {
+                                                        "type": "text",
+                                                        "gravity": "bottom",
+                                                        "text": "北海道の土産物や特産品が揃う店舗。",
+                                                        "decoration": "none",
+                                                        "wrap": true
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    "footer": {
+                                        "type": "box",
+                                        "layout": "vertical",
+                                        "spacing": "sm",
+                                        "contents": [
+                                            {
+                                                "type": "button",
+                                                "style": "primary",
+                                                "action": {
+                                                    "type": "uri",
+                                                    "label": "Check om Map",
+                                                    "uri": "https://goo.gl/maps/Ra7855D12uAYGfWw7"
+                                                },
+                                                "color": "#80abcf",
+                                                "gravity": "top"
+                                            },
+                                            {
+                                                "type": "button",
+                                                "action": {
+                                                    "type": "postback",
+                                                    "data": "addList15",
+                                                    "label": "Add to To do list"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                        
+                    ]
+                }
+            }).catch((err) => { console.log(err.originalError.response.data.details); });
             case "omiyage_yunokawa":
                 let json12 = JSON.parse(fs.readFileSync("./src/Cell/omiyage_yunokawa.json", "utf-8"));
                 return client.replyMessage(event.postback.replyToken, json12);
