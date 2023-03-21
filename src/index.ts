@@ -1,12 +1,14 @@
-import express, { text } from "express";
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable no-case-declarations */
+import express from "express";
 import * as line from "@line/bot-sdk";
 import fs from "fs";
 
 const config = {
     channelAccessToken:
         process.env.LINE_ACCESS_TOKEN ||
-        "OOSkLWjq5NISpH6wjCflkT/9pAyqR0qAZBrzVASDdLO+zeDKQk53AqJ68J7TKQViqw3M2xefrwdh1qd59KRKIHxnu510NTUvXehTucUzxL8EzLF+UBjjosFw0xppUzSyVW6Umucm0yfIaSh3mXGz0wdB04t89/1O/w1cDnyilFU=",
-    channelSecret: process.env.LINE_SECRET || "9fa57070f4316c817c718b1a0a4d1d86",
+        "QWxDTHCEIPeZYRGsCH/F7qWQdOGeQRO7G/3RMNOnNCQ8AbNuVHg/rBn+HzrH46q2nGcrkSjdhQOzdY4TTCI1Mv6d3RNAuZ/iCSjbYaqjSlIMrHAkfCpHVO+8xuuhU4TNIllBNyPWse9WuN59xUrp9gdB04t89/1O/w1cDnyilFU=",
+    channelSecret: process.env.LINE_SECRET || "b8664e402e76291440564818f7ccea48",
 };
 
 const port = process.env.PORT || 3000;
@@ -65,294 +67,299 @@ const followEvent = async (event: any) => {
     }
 };
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const postbackEvent = async (event: any) => {
     try {
         switch (event.postback.data) {
             // カテゴリごと、場所ごとのFlex Messageを表示させる
             case "food_goryokaku":
                 //ここでFlex Messageを返す
-                let json1 = JSON.parse(fs.readFileSync("./src/Cell/food_goryokaku.json", "utf-8"));
+                const json1 = JSON.parse(fs.readFileSync("./src/Cell/food_goryokaku.json", "utf-8"));
                 return client.replyMessage(event.postback.replyToken, json1);
             case "food_hakodateyama":
-                let json2 = JSON.parse(fs.readFileSync("./src/Cell/food_hakodateyama.json", "utf-8"));
+                const json2 = JSON.parse(fs.readFileSync("./src/Cell/food_hakodateyama.json", "utf-8"));
                 return client.replyMessage(event.postback.replyToken, json2);
             case "food_bayarea":
-                let json3 = JSON.parse(fs.readFileSync("./src/Cell/food_bayarea.json", "utf-8"));
+                const json3 = JSON.parse(fs.readFileSync("./src/Cell/food_bayarea.json", "utf-8"));
                 return client.replyMessage(event.postback.replyToken, json3);
             // yeah
             case "food_yunokawa":
-                let json4 = JSON.parse(fs.readFileSync("./src/Cell/food_yunokawa.json", "utf-8"));
-                return client.replyMessage(event.replyToken, {
-                    "type": "flex",
-                    "altText": "food_yunokawa",
-                    "contents": {
-                        "type": "carousel",
-                        "contents": [
-                            {
-                                "type": "bubble",
-                                "hero": {
-                                    "type": "image",
-                                    "size": "full",
-                                    "aspectRatio": "20:13",
-                                    "aspectMode": "cover",
-                                    "url": "https://www.hasesuto.co.jp/images/stores/yunokawa-pc.jpg"
-                                },
-                                "body": {
-                                    "type": "box",
-                                    "layout": "vertical",
-                                    "spacing": "sm",
-                                    "contents": [
-                                        {
-                                            "type": "text",
-                                            "text": "ハセガワストア湯の川店",
-                                            "wrap": true,
-                                            "weight": "bold",
-                                            "size": "xl"
-                                        },
-                                        {
-                                            "type": "box",
-                                            "layout": "vertical",
-                                            "contents": [
-                                                {
-                                                    "type": "text",
-                                                    "text": "0:00-24:00",
-                                                    "wrap": true,
-                                                    "weight": "bold",
-                                                    "size": "lg",
-                                                    "flex": 0
-                                                },
-                                                {
-                                                    "type": "text",
-                                                    "gravity": "bottom",
-                                                    "text": "地元のスーパーマーケット。地元の食材やお土産が豊富。",
-                                                    "decoration": "none",
-                                                    "wrap": true
-                                                }
-                                            ]
-                                        }
-                                    ]
-                                },
-                                "footer": {
-                                    "type": "box",
-                                    "layout": "vertical",
-                                    "spacing": "sm",
-                                    "contents": [
-                                        {
-                                            "type": "button",
-                                            "style": "primary",
-                                            "action": {
-                                                "type": "uri",
-                                                "label": "Check om Map",
-                                                "uri": "https://goo.gl/maps/8c2ux6PsMWMM19Jv5"
+                return client
+                    .replyMessage(event.replyToken, {
+                        type: "flex",
+                        altText: "food_yunokawa",
+                        contents: {
+                            type: "carousel",
+                            contents: [
+                                {
+                                    type: "bubble",
+                                    hero: {
+                                        type: "image",
+                                        size: "full",
+                                        aspectRatio: "20:13",
+                                        aspectMode: "cover",
+                                        url: "https://www.hasesuto.co.jp/images/stores/yunokawa-pc.jpg",
+                                    },
+                                    body: {
+                                        type: "box",
+                                        layout: "vertical",
+                                        spacing: "sm",
+                                        contents: [
+                                            {
+                                                type: "text",
+                                                text: "ハセガワストア湯の川店",
+                                                wrap: true,
+                                                weight: "bold",
+                                                size: "xl",
                                             },
-                                            "color": "#80abcf",
-                                            "gravity": "top"
-                                        },
-                                        {
-                                            "type": "button",
-                                            "action": {
-                                                "type": "postback",
-                                                "data": "hello",
-                                                "label": "Add to To do list"
-                                            }
-                                        }
-                                    ]
-                                }
-                            }
-                        ]
-                    }
-                }).catch((err) => { console.log(err.originalError.response.data.details); });
+                                            {
+                                                type: "box",
+                                                layout: "vertical",
+                                                contents: [
+                                                    {
+                                                        type: "text",
+                                                        text: "0:00-24:00",
+                                                        wrap: true,
+                                                        weight: "bold",
+                                                        size: "lg",
+                                                        flex: 0,
+                                                    },
+                                                    {
+                                                        type: "text",
+                                                        gravity: "bottom",
+                                                        text: "地元のスーパーマーケット。地元の食材やお土産が豊富。",
+                                                        decoration: "none",
+                                                        wrap: true,
+                                                    },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                    footer: {
+                                        type: "box",
+                                        layout: "vertical",
+                                        spacing: "sm",
+                                        contents: [
+                                            {
+                                                type: "button",
+                                                style: "primary",
+                                                action: {
+                                                    type: "uri",
+                                                    label: "Check om Map",
+                                                    uri: "https://goo.gl/maps/8c2ux6PsMWMM19Jv5",
+                                                },
+                                                color: "#80abcf",
+                                                gravity: "top",
+                                            },
+                                            {
+                                                type: "button",
+                                                action: {
+                                                    type: "postback",
+                                                    data: "addList28",
+                                                    label: "Add to To do list",
+                                                },
+                                            },
+                                        ],
+                                    },
+                                },
+                            ],
+                        },
+                    })
+                    .catch((err) => {
+                        console.log(err.originalError.response.data.details);
+                    });
             case "spot_goryokaku":
-                let json5 = JSON.parse(fs.readFileSync("./src/Cell/spot_goryokaku.json", "utf-8"));
+                const json5 = JSON.parse(fs.readFileSync("./src/Cell/spot_goryokaku.json", "utf-8"));
                 return client.replyMessage(event.postback.replyToken, json5);
             case "spot_hakodateyama":
-                let json6 = JSON.parse(fs.readFileSync("./src/Cell/spot_hakodateyama.json", "utf-8"));
+                const json6 = JSON.parse(fs.readFileSync("./src/Cell/spot_hakodateyama.json", "utf-8"));
                 return client.replyMessage(event.postback.replyToken, json6);
             case "spot_bayarea":
-                let json7 = JSON.parse(fs.readFileSync("./src/Cell/spot_bayarea.json", "utf-8"));
+                const json7 = JSON.parse(fs.readFileSync("./src/Cell/spot_bayarea.json", "utf-8"));
                 return client.replyMessage(event.postback.replyToken, json7);
             case "spot_yunokawa":
-                let json8 = JSON.parse(fs.readFileSync("./src/Cell/spot_yunokawa.json", "utf-8"));
+                const json8 = JSON.parse(fs.readFileSync("./src/Cell/spot_yunokawa.json", "utf-8"));
                 return client.replyMessage(event.postback.replyToken, json8);
             case "omiyage_goryokaku":
-                let json9 = JSON.parse(fs.readFileSync("./src/Cell/omiyage_goryokaku.json", "utf-8"));
+                const json9 = JSON.parse(fs.readFileSync("./src/Cell/omiyage_goryokaku.json", "utf-8"));
                 return client.replyMessage(event.postback.replyToken, json9);
             case "omiyage_hakodateyama":
-                let json10 = JSON.parse(fs.readFileSync("./src/Cell/omiyage_hakodateyama.json", "utf-8"));
+                const json10 = JSON.parse(fs.readFileSync("./src/Cell/omiyage_hakodateyama.json", "utf-8"));
                 return client.replyMessage(event.postback.replyToken, json10);
             // yeah
-            case "omiyage_bayarea": let json11 = JSON.parse(fs.readFileSync("./src/Cell/omiyage_bayarea.json", "utf-8"));
-                return client.replyMessage(event.replyToken, {
-                    "type": "flex",
-                    "altText": "omiyage_bayarea",
-                    "contents": {
-                        "type": "carousel",
-                        "contents": [
-
-                            {
-                                "type": "bubble",
-                                "hero": {
-                                    "type": "image",
-                                    "size": "full",
-                                    "aspectRatio": "20:13",
-                                    "aspectMode": "cover",
-                                    "url": "https://s3-media0.fl.yelpcdn.com/bphoto/GL1Df67p95LDxFASDXg6BA/o.jpg"
-                                },
-                                "body": {
-                                    "type": "box",
-                                    "layout": "vertical",
-                                    "spacing": "sm",
-                                    "contents": [
-                                        {
-                                            "type": "text",
-                                            "text": "ラオックス函館赤レンガ店",
-                                            "wrap": true,
-                                            "weight": "bold",
-                                            "size": "xl"
-                                        },
-                                        {
-                                            "type": "box",
-                                            "layout": "vertical",
-                                            "contents": [
-                                                {
-                                                    "type": "text",
-                                                    "text": "9:30-19:00",
-                                                    "wrap": true,
-                                                    "weight": "bold",
-                                                    "size": "lg",
-                                                    "flex": 0
-                                                },
-                                                {
-                                                    "type": "text",
-                                                    "gravity": "bottom",
-                                                    "text": "函館赤レンガ倉庫群内にあるショッピングセンター。",
-                                                    "decoration": "none",
-                                                    "wrap": true
-                                                }
-                                            ]
-                                        }
-                                    ]
-                                },
-                                "footer": {
-                                    "type": "box",
-                                    "layout": "vertical",
-                                    "spacing": "sm",
-                                    "contents": [
-                                        {
-                                            "type": "button",
-                                            "style": "primary",
-                                            "action": {
-                                                "type": "uri",
-                                                "label": "Check om Map",
-                                                "uri": "https://www.google.com/maps/search/%E3%83%A9%E3%82%AA%E3%83%83%E3%82%AF%E3%82%B9%E5%87%BD%E9%A4%A8%E8%B5%A4%E3%83%AC%E3%83%B3%E3%82%AC%E5%BA%97/@41.7664879,140.7143082,17z/data=!3m1!4b1"
+            case "omiyage_bayarea":
+                return client
+                    .replyMessage(event.replyToken, {
+                        type: "flex",
+                        altText: "omiyage_bayarea",
+                        contents: {
+                            type: "carousel",
+                            contents: [
+                                {
+                                    type: "bubble",
+                                    hero: {
+                                        type: "image",
+                                        size: "full",
+                                        aspectRatio: "20:13",
+                                        aspectMode: "cover",
+                                        url: "https://s3-media0.fl.yelpcdn.com/bphoto/GL1Df67p95LDxFASDXg6BA/o.jpg",
+                                    },
+                                    body: {
+                                        type: "box",
+                                        layout: "vertical",
+                                        spacing: "sm",
+                                        contents: [
+                                            {
+                                                type: "text",
+                                                text: "ラオックス函館赤レンガ店",
+                                                wrap: true,
+                                                weight: "bold",
+                                                size: "xl",
                                             },
-                                            "color": "#80abcf",
-                                            "gravity": "top"
-                                        },
-                                        {
-                                            "type": "button",
-                                            "action": {
-                                                "type": "postback",
-                                                "data": "addList14",
-                                                "label": "Add to To do list"
-                                            }
-                                        }
-                                    ]
-                                }
-                            },
-                            {
-                                "type": "bubble",
-                                "hero": {
-                                    "type": "image",
-                                    "size": "full",
-                                    "aspectRatio": "20:13",
-                                    "aspectMode": "cover",
-                                    "url": "https://s3-media0.fl.yelpcdn.com/bphoto/GL1Df67p95LDxFASDXg6BA/o.jpg"
-                                },
-                                "body": {
-                                    "type": "box",
-                                    "layout": "vertical",
-                                    "spacing": "sm",
-                                    "contents": [
-                                        {
-                                            "type": "text",
-                                            "text": "北海道四季彩館函館店",
-                                            "wrap": true,
-                                            "weight": "bold",
-                                            "size": "xl"
-                                        },
-                                        {
-                                            "type": "box",
-                                            "layout": "vertical",
-                                            "contents": [
-                                                {
-                                                    "type": "text",
-                                                    "text": "7:00-20:00",
-                                                    "wrap": true,
-                                                    "weight": "bold",
-                                                    "size": "lg",
-                                                    "flex": 0
-                                                },
-                                                {
-                                                    "type": "text",
-                                                    "gravity": "bottom",
-                                                    "text": "北海道の土産物や特産品が揃う店舗。",
-                                                    "decoration": "none",
-                                                    "wrap": true
-                                                }
-                                            ]
-                                        }
-                                    ]
-                                },
-                                "footer": {
-                                    "type": "box",
-                                    "layout": "vertical",
-                                    "spacing": "sm",
-                                    "contents": [
-                                        {
-                                            "type": "button",
-                                            "style": "primary",
-                                            "action": {
-                                                "type": "uri",
-                                                "label": "Check om Map",
-                                                "uri": "https://goo.gl/maps/Ra7855D12uAYGfWw7"
+                                            {
+                                                type: "box",
+                                                layout: "vertical",
+                                                contents: [
+                                                    {
+                                                        type: "text",
+                                                        text: "9:30-19:00",
+                                                        wrap: true,
+                                                        weight: "bold",
+                                                        size: "lg",
+                                                        flex: 0,
+                                                    },
+                                                    {
+                                                        type: "text",
+                                                        gravity: "bottom",
+                                                        text: "函館赤レンガ倉庫群内にあるショッピングセンター。",
+                                                        decoration: "none",
+                                                        wrap: true,
+                                                    },
+                                                ],
                                             },
-                                            "color": "#80abcf",
-                                            "gravity": "top"
-                                        },
-                                        {
-                                            "type": "button",
-                                            "action": {
-                                                "type": "postback",
-                                                "data": "addList15",
-                                                "label": "Add to To do list"
-                                            }
-                                        }
-                                    ]
-                                }
-                            }
-
-
-                        ]
-                    }
-                } as any).catch((err) => { console.log(err.originalError.response.data.details); });
+                                        ],
+                                    },
+                                    footer: {
+                                        type: "box",
+                                        layout: "vertical",
+                                        spacing: "sm",
+                                        contents: [
+                                            {
+                                                type: "button",
+                                                style: "primary",
+                                                action: {
+                                                    type: "uri",
+                                                    label: "Check om Map",
+                                                    uri: "https://www.google.com/maps/search/%E3%83%A9%E3%82%AA%E3%83%83%E3%82%AF%E3%82%B9%E5%87%BD%E9%A4%A8%E8%B5%A4%E3%83%AC%E3%83%B3%E3%82%AC%E5%BA%97/@41.7664879,140.7143082,17z/data=!3m1!4b1",
+                                                },
+                                                color: "#80abcf",
+                                                gravity: "top",
+                                            },
+                                            {
+                                                type: "button",
+                                                action: {
+                                                    type: "postback",
+                                                    data: "addList14",
+                                                    label: "Add to To do list",
+                                                },
+                                            },
+                                        ],
+                                    },
+                                },
+                                {
+                                    type: "bubble",
+                                    hero: {
+                                        type: "image",
+                                        size: "full",
+                                        aspectRatio: "20:13",
+                                        aspectMode: "cover",
+                                        url: "https://s3-media0.fl.yelpcdn.com/bphoto/GL1Df67p95LDxFASDXg6BA/o.jpg",
+                                    },
+                                    body: {
+                                        type: "box",
+                                        layout: "vertical",
+                                        spacing: "sm",
+                                        contents: [
+                                            {
+                                                type: "text",
+                                                text: "北海道四季彩館函館店",
+                                                wrap: true,
+                                                weight: "bold",
+                                                size: "xl",
+                                            },
+                                            {
+                                                type: "box",
+                                                layout: "vertical",
+                                                contents: [
+                                                    {
+                                                        type: "text",
+                                                        text: "7:00-20:00",
+                                                        wrap: true,
+                                                        weight: "bold",
+                                                        size: "lg",
+                                                        flex: 0,
+                                                    },
+                                                    {
+                                                        type: "text",
+                                                        gravity: "bottom",
+                                                        text: "北海道の土産物や特産品が揃う店舗。",
+                                                        decoration: "none",
+                                                        wrap: true,
+                                                    },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                    footer: {
+                                        type: "box",
+                                        layout: "vertical",
+                                        spacing: "sm",
+                                        contents: [
+                                            {
+                                                type: "button",
+                                                style: "primary",
+                                                action: {
+                                                    type: "uri",
+                                                    label: "Check om Map",
+                                                    uri: "https://goo.gl/maps/Ra7855D12uAYGfWw7",
+                                                },
+                                                color: "#80abcf",
+                                                gravity: "top",
+                                            },
+                                            {
+                                                type: "button",
+                                                action: {
+                                                    type: "postback",
+                                                    data: "addList15",
+                                                    label: "Add to To do list",
+                                                },
+                                            },
+                                        ],
+                                    },
+                                },
+                            ],
+                        },
+                    } as any)
+                    .catch((err) => {
+                        console.log(err.originalError.response.data.details);
+                    });
             case "omiyage_yunokawa":
-                let json12 = JSON.parse(fs.readFileSync("./src/Cell/omiyage_yunokawa.json", "utf-8"));
+                const json12 = JSON.parse(fs.readFileSync("./src/Cell/omiyage_yunokawa.json", "utf-8"));
                 return client.replyMessage(event.postback.replyToken, json12);
 
             //行き先リストに追加
-            case /addList./:
-                const flexId = (event.postback.data).slice(-1);
+            case /addList.*/:
+                const flexId = event.postback.data.slice(-1);
+                console.log("flexId" + flexId);
                 return updateSpotData(1, flexId, event);
 
             // 行き先リストを表示する
             case "list":
-                return readSpotData(1);
+                return readSpotData(1, event);
         }
     } catch (err: any) {
         console.log(err);
         console.log(err.originalError.response.data.details);
-
     }
 };
 
@@ -382,7 +389,7 @@ const richMenuEvent = async (aliasName: string, richMenu: line.RichMenu, image: 
         console.log(richMenuList);
     } catch (err: any) {
         //console.log(err);
-        console.log(err.originalError.response.data);
+        //console.log(err.originalError.response.data);
         //console.log(err.originalError.response.request);
     }
 };
@@ -439,7 +446,9 @@ const storeSpotData = () => {
         }
     }
     fs.writeFileSync("./src/storeSpotDate.json", JSON.stringify(spotData));
-}
+};
+
+storeSpotData();
 
 // リストに追加
 const updateSpotData = (userId: number, flexId: number, event: any) => {
@@ -451,10 +460,10 @@ const updateSpotData = (userId: number, flexId: number, event: any) => {
             count++;
         }
         if (count >= 12) {
-            console.log("追加できないよ！")
+            console.log("追加できないよ！");
             return client.replyMessage(event.replyToken, {
                 type: "text",
-                text: "これ以上追加することは出来ません！"
+                text: "これ以上追加することは出来ません！",
             });
 
             //return;
@@ -462,13 +471,240 @@ const updateSpotData = (userId: number, flexId: number, event: any) => {
     }
     spotData[userId][flexId] = 1;
     fs.writeFileSync("./src/storeSpotDate.json", JSON.stringify(spotData));
-}
+};
 
 // リストのデータを表示
-const readSpotData = (userId: number) => {
+const readSpotData = (userId: number, event: any) => {
     const spotData = JSON.parse(fs.readFileSync("./src/storeSpotDate.json", "utf-8"));
     console.log(spotData[userId]);
-}
+
+    client
+        .replyMessage(event.replyToken, {
+            type: "flex",
+            altText: "omiyage_bayarea",
+            contents: {
+                type: "carousel",
+                contents: [
+                    {
+                        type: "bubble",
+                        hero: {
+                            type: "image",
+                            size: "full",
+                            aspectRatio: "20:13",
+                            aspectMode: "cover",
+                            url: "https://s3-media0.fl.yelpcdn.com/bphoto/GL1Df67p95LDxFASDXg6BA/o.jpg",
+                        },
+                        body: {
+                            type: "box",
+                            layout: "vertical",
+                            spacing: "sm",
+                            contents: [
+                                {
+                                    type: "text",
+                                    text: "ラオックス函館赤レンガ店",
+                                    wrap: true,
+                                    weight: "bold",
+                                    size: "xl",
+                                },
+                                {
+                                    type: "box",
+                                    layout: "vertical",
+                                    contents: [
+                                        {
+                                            type: "text",
+                                            text: "9:30-19:00",
+                                            wrap: true,
+                                            weight: "bold",
+                                            size: "lg",
+                                            flex: 0,
+                                        },
+                                        {
+                                            type: "text",
+                                            gravity: "bottom",
+                                            text: "函館赤レンガ倉庫群内にあるショッピングセンター。",
+                                            decoration: "none",
+                                            wrap: true,
+                                        },
+                                    ],
+                                },
+                            ],
+                        },
+                        footer: {
+                            type: "box",
+                            layout: "vertical",
+                            spacing: "sm",
+                            contents: [
+                                {
+                                    type: "button",
+                                    style: "primary",
+                                    action: {
+                                        type: "uri",
+                                        label: "Check om Map",
+                                        uri: "https://www.google.com/maps/search/%E3%83%A9%E3%82%AA%E3%83%83%E3%82%AF%E3%82%B9%E5%87%BD%E9%A4%A8%E8%B5%A4%E3%83%AC%E3%83%B3%E3%82%AC%E5%BA%97/@41.7664879,140.7143082,17z/data=!3m1!4b1",
+                                    },
+                                    color: "#80abcf",
+                                    gravity: "top",
+                                },
+                                {
+                                    type: "button",
+                                    action: {
+                                        type: "postback",
+                                        data: "addList14",
+                                        label: "Add to To do list",
+                                    },
+                                },
+                            ],
+                        },
+                    },
+                    {
+                        type: "bubble",
+                        hero: {
+                            type: "image",
+                            size: "full",
+                            aspectRatio: "20:13",
+                            aspectMode: "cover",
+                            url: "https://s3-media0.fl.yelpcdn.com/bphoto/GL1Df67p95LDxFASDXg6BA/o.jpg",
+                        },
+                        body: {
+                            type: "box",
+                            layout: "vertical",
+                            spacing: "sm",
+                            contents: [
+                                {
+                                    type: "text",
+                                    text: "北海道四季彩館函館店",
+                                    wrap: true,
+                                    weight: "bold",
+                                    size: "xl",
+                                },
+                                {
+                                    type: "box",
+                                    layout: "vertical",
+                                    contents: [
+                                        {
+                                            type: "text",
+                                            text: "7:00-20:00",
+                                            wrap: true,
+                                            weight: "bold",
+                                            size: "lg",
+                                            flex: 0,
+                                        },
+                                        {
+                                            type: "text",
+                                            gravity: "bottom",
+                                            text: "北海道の土産物や特産品が揃う店舗。",
+                                            decoration: "none",
+                                            wrap: true,
+                                        },
+                                    ],
+                                },
+                            ],
+                        },
+                        footer: {
+                            type: "box",
+                            layout: "vertical",
+                            spacing: "sm",
+                            contents: [
+                                {
+                                    type: "button",
+                                    style: "primary",
+                                    action: {
+                                        type: "uri",
+                                        label: "Check om Map",
+                                        uri: "https://goo.gl/maps/Ra7855D12uAYGfWw7",
+                                    },
+                                    color: "#80abcf",
+                                    gravity: "top",
+                                },
+                                {
+                                    type: "button",
+                                    action: {
+                                        type: "postback",
+                                        data: "addList15",
+                                        label: "Add to To do list",
+                                    },
+                                },
+                            ],
+                        },
+                    },
+                    {
+                        type: "bubble",
+                        hero: {
+                            type: "image",
+                            size: "full",
+                            aspectRatio: "20:13",
+                            aspectMode: "cover",
+                            url: "https://www.hasesuto.co.jp/images/stores/yunokawa-pc.jpg",
+                        },
+                        body: {
+                            type: "box",
+                            layout: "vertical",
+                            spacing: "sm",
+                            contents: [
+                                {
+                                    type: "text",
+                                    text: "ハセガワストア湯の川店",
+                                    wrap: true,
+                                    weight: "bold",
+                                    size: "xl",
+                                },
+                                {
+                                    type: "box",
+                                    layout: "vertical",
+                                    contents: [
+                                        {
+                                            type: "text",
+                                            text: "0:00-24:00",
+                                            wrap: true,
+                                            weight: "bold",
+                                            size: "lg",
+                                            flex: 0,
+                                        },
+                                        {
+                                            type: "text",
+                                            gravity: "bottom",
+                                            text: "地元のスーパーマーケット。地元の食材やお土産が豊富。",
+                                            decoration: "none",
+                                            wrap: true,
+                                        },
+                                    ],
+                                },
+                            ],
+                        },
+                        footer: {
+                            type: "box",
+                            layout: "vertical",
+                            spacing: "sm",
+                            contents: [
+                                {
+                                    type: "button",
+                                    style: "primary",
+                                    action: {
+                                        type: "uri",
+                                        label: "Check om Map",
+                                        uri: "https://goo.gl/maps/8c2ux6PsMWMM19Jv5",
+                                    },
+                                    color: "#80abcf",
+                                    gravity: "top",
+                                },
+                                {
+                                    type: "button",
+                                    action: {
+                                        type: "postback",
+                                        data: "addList28",
+                                        label: "Add to To do list",
+                                    },
+                                },
+                            ],
+                        },
+                    },
+                ],
+            },
+        } as any)
+        .catch((err) => {
+            console.log(err.originalError.response.data.details);
+        });
+};
 
 app.listen(port, () => {
     console.log(`Server running on ${port}`);
