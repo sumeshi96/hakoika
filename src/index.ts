@@ -5,8 +5,8 @@ import fs from "fs";
 const config = {
     channelAccessToken:
         process.env.LINE_ACCESS_TOKEN ||
-        "QWxDTHCEIPeZYRGsCH/F7qWQdOGeQRO7G/3RMNOnNCQ8AbNuVHg/rBn+HzrH46q2nGcrkSjdhQOzdY4TTCI1Mv6d3RNAuZ/iCSjbYaqjSlIMrHAkfCpHVO+8xuuhU4TNIllBNyPWse9WuN59xUrp9gdB04t89/1O/w1cDnyilFU=",
-    channelSecret: process.env.LINE_SECRET || "b8664e402e76291440564818f7ccea48",
+        "OOSkLWjq5NISpH6wjCflkT/9pAyqR0qAZBrzVASDdLO+zeDKQk53AqJ68J7TKQViqw3M2xefrwdh1qd59KRKIHxnu510NTUvXehTucUzxL8EzLF+UBjjosFw0xppUzSyVW6Umucm0yfIaSh3mXGz0wdB04t89/1O/w1cDnyilFU=",
+    channelSecret: process.env.LINE_SECRET || "9fa57070f4316c817c718b1a0a4d1d86",
 };
 
 const port = process.env.PORT || 3000;
@@ -85,7 +85,7 @@ const postbackEvent = async (event: any) => {
                 return client.replyMessage(event.replyToken, {
                     "type": "flex",
                     "altText": "food_yunokawa",
-                    "contents":{
+                    "contents": {
                         "type": "carousel",
                         "contents": [
                             {
@@ -181,179 +181,178 @@ const postbackEvent = async (event: any) => {
                 let json10 = JSON.parse(fs.readFileSync("./src/Cell/omiyage_hakodateyama.json", "utf-8"));
                 return client.replyMessage(event.postback.replyToken, json10);
             // yeah
-            case "omiyage_bayarea":let json11 = JSON.parse(fs.readFileSync("./src/Cell/food_yunokawa.json", "utf-8"));
-            return client.replyMessage(event.replyToken, {
-                "type": "flex",
-                "altText": "omiyage_bayarea",
-                "contents":{
-                    "type": "carousel",
-                    "contents": [
-                        {
-                            "type": "carousel",
-                            "contents": [
-                                {
-                                    "type": "bubble",
-                                    "hero": {
-                                        "type": "image",
-                                        "size": "full",
-                                        "aspectRatio": "20:13",
-                                        "aspectMode": "cover",
-                                        "url": "https://s3-media0.fl.yelpcdn.com/bphoto/GL1Df67p95LDxFASDXg6BA/o.jpg"
-                                    },
-                                    "body": {
-                                        "type": "box",
-                                        "layout": "vertical",
-                                        "spacing": "sm",
-                                        "contents": [
-                                            {
-                                                "type": "text",
-                                                "text": "ラオックス函館赤レンガ店",
-                                                "wrap": true,
-                                                "weight": "bold",
-                                                "size": "xl"
-                                            },
-                                            {
-                                                "type": "box",
-                                                "layout": "vertical",
-                                                "contents": [
-                                                    {
-                                                        "type": "text",
-                                                        "text": "9:30-19:00",
-                                                        "wrap": true,
-                                                        "weight": "bold",
-                                                        "size": "lg",
-                                                        "flex": 0
-                                                    },
-                                                    {
-                                                        "type": "text",
-                                                        "gravity": "bottom",
-                                                        "text": "函館赤レンガ倉庫群内にあるショッピングセンター。",
-                                                        "decoration": "none",
-                                                        "wrap": true
-                                                    }
-                                                ]
-                                            }
-                                        ]
-                                    },
-                                    "footer": {
-                                        "type": "box",
-                                        "layout": "vertical",
-                                        "spacing": "sm",
-                                        "contents": [
-                                            {
-                                                "type": "button",
-                                                "style": "primary",
-                                                "action": {
-                                                    "type": "uri",
-                                                    "label": "Check om Map",
-                                                    "uri": "https://www.google.com/maps/search/%E3%83%A9%E3%82%AA%E3%83%83%E3%82%AF%E3%82%B9%E5%87%BD%E9%A4%A8%E8%B5%A4%E3%83%AC%E3%83%B3%E3%82%AC%E5%BA%97/@41.7664879,140.7143082,17z/data=!3m1!4b1"
-                                                },
-                                                "color": "#80abcf",
-                                                "gravity": "top"
-                                            },
-                                            {
-                                                "type": "button",
-                                                "action": {
-                                                    "type": "postback",
-                                                    "data": "addList14",
-                                                    "label": "Add to To do list"
-                                                }
-                                            }
-                                        ]
-                                    }
+            case "omiyage_bayarea": let json11 = JSON.parse(fs.readFileSync("./src/Cell/omiyage_bayarea.json", "utf-8"));
+                return client.replyMessage(event.replyToken, {
+                    "type": "flex",
+                    "altText": "omiyage_bayarea",
+                    "contents": {
+                        "type": "carousel",
+                        "contents": [
+
+                            {
+                                "type": "bubble",
+                                "hero": {
+                                    "type": "image",
+                                    "size": "full",
+                                    "aspectRatio": "20:13",
+                                    "aspectMode": "cover",
+                                    "url": "https://s3-media0.fl.yelpcdn.com/bphoto/GL1Df67p95LDxFASDXg6BA/o.jpg"
                                 },
-                                {
-                                    "type": "bubble",
-                                    "hero": {
-                                        "type": "image",
-                                        "size": "full",
-                                        "aspectRatio": "20:13",
-                                        "aspectMode": "cover",
-                                        "url": "https://s3-media0.fl.yelpcdn.com/bphoto/GL1Df67p95LDxFASDXg6BA/o.jpg"
-                                    },
-                                    "body": {
-                                        "type": "box",
-                                        "layout": "vertical",
-                                        "spacing": "sm",
-                                        "contents": [
-                                            {
-                                                "type": "text",
-                                                "text": "北海道四季彩館函館店",
-                                                "wrap": true,
-                                                "weight": "bold",
-                                                "size": "xl"
-                                            },
-                                            {
-                                                "type": "box",
-                                                "layout": "vertical",
-                                                "contents": [
-                                                    {
-                                                        "type": "text",
-                                                        "text": "7:00-20:00",
-                                                        "wrap": true,
-                                                        "weight": "bold",
-                                                        "size": "lg",
-                                                        "flex": 0
-                                                    },
-                                                    {
-                                                        "type": "text",
-                                                        "gravity": "bottom",
-                                                        "text": "北海道の土産物や特産品が揃う店舗。",
-                                                        "decoration": "none",
-                                                        "wrap": true
-                                                    }
-                                                ]
-                                            }
-                                        ]
-                                    },
-                                    "footer": {
-                                        "type": "box",
-                                        "layout": "vertical",
-                                        "spacing": "sm",
-                                        "contents": [
-                                            {
-                                                "type": "button",
-                                                "style": "primary",
-                                                "action": {
-                                                    "type": "uri",
-                                                    "label": "Check om Map",
-                                                    "uri": "https://goo.gl/maps/Ra7855D12uAYGfWw7"
+                                "body": {
+                                    "type": "box",
+                                    "layout": "vertical",
+                                    "spacing": "sm",
+                                    "contents": [
+                                        {
+                                            "type": "text",
+                                            "text": "ラオックス函館赤レンガ店",
+                                            "wrap": true,
+                                            "weight": "bold",
+                                            "size": "xl"
+                                        },
+                                        {
+                                            "type": "box",
+                                            "layout": "vertical",
+                                            "contents": [
+                                                {
+                                                    "type": "text",
+                                                    "text": "9:30-19:00",
+                                                    "wrap": true,
+                                                    "weight": "bold",
+                                                    "size": "lg",
+                                                    "flex": 0
                                                 },
-                                                "color": "#80abcf",
-                                                "gravity": "top"
-                                            },
-                                            {
-                                                "type": "button",
-                                                "action": {
-                                                    "type": "postback",
-                                                    "data": "addList15",
-                                                    "label": "Add to To do list"
+                                                {
+                                                    "type": "text",
+                                                    "gravity": "bottom",
+                                                    "text": "函館赤レンガ倉庫群内にあるショッピングセンター。",
+                                                    "decoration": "none",
+                                                    "wrap": true
                                                 }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                "footer": {
+                                    "type": "box",
+                                    "layout": "vertical",
+                                    "spacing": "sm",
+                                    "contents": [
+                                        {
+                                            "type": "button",
+                                            "style": "primary",
+                                            "action": {
+                                                "type": "uri",
+                                                "label": "Check om Map",
+                                                "uri": "https://www.google.com/maps/search/%E3%83%A9%E3%82%AA%E3%83%83%E3%82%AF%E3%82%B9%E5%87%BD%E9%A4%A8%E8%B5%A4%E3%83%AC%E3%83%B3%E3%82%AC%E5%BA%97/@41.7664879,140.7143082,17z/data=!3m1!4b1"
+                                            },
+                                            "color": "#80abcf",
+                                            "gravity": "top"
+                                        },
+                                        {
+                                            "type": "button",
+                                            "action": {
+                                                "type": "postback",
+                                                "data": "addList14",
+                                                "label": "Add to To do list"
                                             }
-                                        ]
-                                    }
+                                        }
+                                    ]
                                 }
-                            ]
-                        }
-                        
-                    ]
-                }
-            }).catch((err) => { console.log(err.originalError.response.data.details); });
+                            },
+                            {
+                                "type": "bubble",
+                                "hero": {
+                                    "type": "image",
+                                    "size": "full",
+                                    "aspectRatio": "20:13",
+                                    "aspectMode": "cover",
+                                    "url": "https://s3-media0.fl.yelpcdn.com/bphoto/GL1Df67p95LDxFASDXg6BA/o.jpg"
+                                },
+                                "body": {
+                                    "type": "box",
+                                    "layout": "vertical",
+                                    "spacing": "sm",
+                                    "contents": [
+                                        {
+                                            "type": "text",
+                                            "text": "北海道四季彩館函館店",
+                                            "wrap": true,
+                                            "weight": "bold",
+                                            "size": "xl"
+                                        },
+                                        {
+                                            "type": "box",
+                                            "layout": "vertical",
+                                            "contents": [
+                                                {
+                                                    "type": "text",
+                                                    "text": "7:00-20:00",
+                                                    "wrap": true,
+                                                    "weight": "bold",
+                                                    "size": "lg",
+                                                    "flex": 0
+                                                },
+                                                {
+                                                    "type": "text",
+                                                    "gravity": "bottom",
+                                                    "text": "北海道の土産物や特産品が揃う店舗。",
+                                                    "decoration": "none",
+                                                    "wrap": true
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                "footer": {
+                                    "type": "box",
+                                    "layout": "vertical",
+                                    "spacing": "sm",
+                                    "contents": [
+                                        {
+                                            "type": "button",
+                                            "style": "primary",
+                                            "action": {
+                                                "type": "uri",
+                                                "label": "Check om Map",
+                                                "uri": "https://goo.gl/maps/Ra7855D12uAYGfWw7"
+                                            },
+                                            "color": "#80abcf",
+                                            "gravity": "top"
+                                        },
+                                        {
+                                            "type": "button",
+                                            "action": {
+                                                "type": "postback",
+                                                "data": "addList15",
+                                                "label": "Add to To do list"
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+
+
+                        ]
+                    }
+                } as any).catch((err) => { console.log(err.originalError.response.data.details); });
             case "omiyage_yunokawa":
                 let json12 = JSON.parse(fs.readFileSync("./src/Cell/omiyage_yunokawa.json", "utf-8"));
                 return client.replyMessage(event.postback.replyToken, json12);
-        
+
             //行き先リストに追加
             case /addList./:
                 const flexId = (event.postback.data).slice(-1);
                 return updateSpotData(1, flexId, event);
-        
+
             // 行き先リストを表示する
             case "list":
                 return readSpotData(1);
         }
-    } catch (err:any) {
+    } catch (err: any) {
+        console.log(err);
         console.log(err.originalError.response.data.details);
+
     }
 };
 
@@ -429,8 +428,8 @@ const selectLanguageQuickReply = async (event: any, sendMessage: string) => {
 
 // なんとなく書いておく行き先保存用関数
 const storeSpotData = () => {
-    const spotData= new Array(5);
-    for (let i = 0; i < 5; i++) { 
+    const spotData = new Array(5);
+    for (let i = 0; i < 5; i++) {
         spotData[i] = new Array(40);
     }
 
@@ -443,30 +442,30 @@ const storeSpotData = () => {
 }
 
 // リストに追加
-const updateSpotData = (userId:number,flexId:number ,event:any) => {
+const updateSpotData = (userId: number, flexId: number, event: any) => {
     const spotData = JSON.parse(fs.readFileSync("./src/storeSpotDate.json", "utf-8"));
     // 1の要素が12個以上あるときは追加できなくする
     let count = 0;
-        for (let j = 0; j < 40; j++) {
-            if (spotData[userId][j] == 1) {
-                count++;
-            }
-            if (count >= 12) {
-                console.log("追加できないよ！")
-                return client.replyMessage(event.replyToken, {
-                    type: "text",
-                    text: "これ以上追加することは出来ません！"
-                });
-                
-                //return;
-            }
+    for (let j = 0; j < 40; j++) {
+        if (spotData[userId][j] == 1) {
+            count++;
         }
+        if (count >= 12) {
+            console.log("追加できないよ！")
+            return client.replyMessage(event.replyToken, {
+                type: "text",
+                text: "これ以上追加することは出来ません！"
+            });
+
+            //return;
+        }
+    }
     spotData[userId][flexId] = 1;
     fs.writeFileSync("./src/storeSpotDate.json", JSON.stringify(spotData));
 }
 
 // リストのデータを表示
-const readSpotData = (userId:number) => {
+const readSpotData = (userId: number) => {
     const spotData = JSON.parse(fs.readFileSync("./src/storeSpotDate.json", "utf-8"));
     console.log(spotData[userId]);
 }

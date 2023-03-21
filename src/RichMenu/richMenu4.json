@@ -29,7 +29,7 @@
             },
             "action": {
                 "type": "postback",
-                "data": "shop_bayarea"
+                "data": "omiyage_bayarea"
             }
         },
         {
@@ -41,7 +41,7 @@
             },
             "action": {
                 "type": "postback",
-                "data": "shop_goryokaku"
+                "data": "omiyage_goryokaku"
             }
         },
         {
@@ -53,7 +53,7 @@
             },
             "action": {
                 "type": "postback",
-                "data": "shop_hakodateyama"
+                "data": "omiyage_hakodateyama"
             }
         },
         {
@@ -65,7 +65,7 @@
             },
             "action": {
                 "type": "postback",
-                "data": "shop_Yunokawa"
+                "data": "omiyage_Yunokawa"
             }
         }
     ]
